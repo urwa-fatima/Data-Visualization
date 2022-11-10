@@ -17,6 +17,10 @@ body {
     margin-top: 50px;
 }
 
+.content {
+    width: 40%
+}
+
 .introduction .content {
     text-align: left;
 }
