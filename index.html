@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,9 @@
     <title></title>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
-    <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
-    <script type="text/javascript" src="d3-7.6.1/package/dist/d3.js"></script>
-
-    <!-- <script type="text/javascript" src="js/d3.v3.js"></script> -->
-
+    <script type="text/javascript" src="/d3-7.6.1/package/dist/d3.js"></script>
 </head>
+
 
 <body>
     <div class="body">
@@ -44,34 +41,24 @@
                     will be more suitable for the Trento tree dataset.
                 </p>
             </div>
-            <section class="week-assign">
-                <div>
-                    <a href="Week1.html">Week 1</a>
-                </div>
-
-            </section>
         </section>
 
         <section>
-            <script type="text/javascript">
+            <a href="barchart.html">
+                <p>Link to the Bar Chart Page</p>
+            </a>
 
-                d3.csv("data/food.csv", function (data) {
-                    console.log(data);
-                });
-
-            </script>
         </section>
     </div>
+
     <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
     <script>
         d3.json("data/circoscrizioni.json", function (data) {
             console.log(data);
         });
-        d3.csv("data/Reports/full report per tree.csv",
-            function (csvdata) { console.log(csvdata); }
-        )
     </script>
 
 </body>
+
 
 </html>
