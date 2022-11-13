@@ -29,16 +29,19 @@
         var w = 500;
         var h = 100;
 
+        var dcount = [];
+
         var dataset = d3.csv("data/export_data.csv").then(dataset => {
             dataset.forEach(d => {
                 d.canopy_cov = +d.canopy_cov;
                 d.count = +d.count;
+                dcount.push(d.count)
             });
-            console.log(dataset);
+            console.log(dcount);
             return dataset
         });
 
-        var count = d3.map(dataset, d => d.count);
+
 
         // var dataset = [5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
         //     11, 12, 15, 20, 18, 17, 16, 18, 23, 25];
@@ -51,7 +54,7 @@
         console.log(dataset);
 
         svg.selectAll("rect")
-            .data(count)
+            .data(dcount)
             .enter()
             .append("rect")
             .attr("x", 0)
