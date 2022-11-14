@@ -1,0 +1,855 @@
+Region,Name,count
+ARGENTARIO,Abies alba,1
+ARGENTARIO,Acer campestre,34
+ARGENTARIO,Acer negundo,2
+ARGENTARIO,Acer platanoides,13
+ARGENTARIO,Acer pseudoplatanus,4
+ARGENTARIO,Acer rubrum,1
+ARGENTARIO,Acer saccharinum,11
+ARGENTARIO,Aesculus hippocastanum,9
+ARGENTARIO,Arbutus unedo,1
+ARGENTARIO,Betula,8
+ARGENTARIO,Betula pendula,22
+ARGENTARIO,Carpinus betulus,18
+ARGENTARIO,Catalpa bignonioides,1
+ARGENTARIO,Cedrus atlantica,3
+ARGENTARIO,Cedrus deodara,17
+ARGENTARIO,Celtis australis,61
+ARGENTARIO,Corylus avellana,2
+ARGENTARIO,Crataegus,2
+ARGENTARIO,Cupressus,25
+ARGENTARIO,Cupressus arizonica,1
+ARGENTARIO,Cupressus sempervirens,5
+ARGENTARIO,Diospyros kaki,1
+ARGENTARIO,Fagus,3
+ARGENTARIO,Fagus sylvatica,13
+ARGENTARIO,Ficus carica,1
+ARGENTARIO,Fraxinus americana,1
+ARGENTARIO,Fraxinus excelsior,9
+ARGENTARIO,Ginkgo biloba,3
+ARGENTARIO,Juglans nigra,3
+ARGENTARIO,Liquidambar styraciflua,7
+ARGENTARIO,Liriodendron tulipifera,3
+ARGENTARIO,Magnolia x soulangeana,4
+ARGENTARIO,Malus,1
+ARGENTARIO,Morus alba,3
+ARGENTARIO,Ostrya carpinifolia,13
+ARGENTARIO,Parrotia persica,3
+ARGENTARIO,Paulownia tomentosa,2
+ARGENTARIO,Picea abies,18
+ARGENTARIO,Pinus nigra,23
+ARGENTARIO,Pinus strobus,5
+ARGENTARIO,Pinus wallichiana,3
+ARGENTARIO,Platanus occidentalis,2
+ARGENTARIO,Platanus x acerifolia 'Bloodgood',1
+ARGENTARIO,Platanus x hispanica,12
+ARGENTARIO,Populus alba,2
+ARGENTARIO,Populus nigra,1
+ARGENTARIO,Populus tremula,1
+ARGENTARIO,Prunus,5
+ARGENTARIO,Prunus amygdalus,1
+ARGENTARIO,Prunus avium,1
+ARGENTARIO,Prunus cerasifera,5
+ARGENTARIO,Prunus dulcis,1
+ARGENTARIO,Pyrus calleryana,2
+ARGENTARIO,Quercus ilex,5
+ARGENTARIO,Quercus robur,25
+ARGENTARIO,Robinia pseudoacacia,2
+ARGENTARIO,Salix alba,1
+ARGENTARIO,Salix babylonica,1
+ARGENTARIO,Sambucus nigra,1
+ARGENTARIO,Sequoia sempervirens,1
+ARGENTARIO,Sophora japonica,5
+ARGENTARIO,Sorbus,1
+ARGENTARIO,Tilia cordata,5
+ARGENTARIO,Tilia x europaea,10
+ARGENTARIO,Ulmus minor,2
+ARGENTARIO,Ulmus pumila,1
+BONDONE,Abies pinsapo,1
+BONDONE,Acer buergerianum,1
+BONDONE,Acer campestre,9
+BONDONE,Acer negundo,1
+BONDONE,Acer platanoides,3
+BONDONE,Acer pseudoplatanus,8
+BONDONE,Acer tataricum ssp. ginnala,1
+BONDONE,Aesculus hippocastanum,21
+BONDONE,Betula nigra,1
+BONDONE,Carpinus betulus,3
+BONDONE,Cedrus atlantica,2
+BONDONE,Cedrus deodara,5
+BONDONE,Celtis australis,1
+BONDONE,Cercis siliquastrum,3
+BONDONE,Cornus,1
+BONDONE,Cupressus,23
+BONDONE,Cupressus arizonica,4
+BONDONE,Cupressus sempervirens,24
+BONDONE,Fagus,10
+BONDONE,Fagus sylvatica,4
+BONDONE,Ficus carica,1
+BONDONE,Juglans nigra,5
+BONDONE,Liriodendron tulipifera,6
+BONDONE,Morus alba,9
+BONDONE,Ostrya carpinifolia,11
+BONDONE,Picea,1
+BONDONE,Picea abies,13
+BONDONE,Pinus nigra,8
+BONDONE,Platanus x hispanica,2
+BONDONE,Prunus,4
+BONDONE,Prunus avium,22
+BONDONE,Prunus cerasifera,2
+BONDONE,Prunus serrulata,1
+BONDONE,Pyrus,1
+BONDONE,Pyrus calleryana,25
+BONDONE,Quercus rubra,3
+BONDONE,Robinia pseudoacacia,3
+BONDONE,Sophora japonica,7
+BONDONE,Sorbus,1
+BONDONE,Sorbus thuringiaca,1
+BONDONE,Tilia cordata,9
+BONDONE,Tilia tomentosa,3
+BONDONE,Tilia x europaea,28
+CENTRO STORICO PIEDICASTELLO,Abies alba,19
+CENTRO STORICO PIEDICASTELLO,Acer,64
+CENTRO STORICO PIEDICASTELLO,Acer buergerianum,4
+CENTRO STORICO PIEDICASTELLO,Acer campestre,52
+CENTRO STORICO PIEDICASTELLO,Acer monspessulanum,2
+CENTRO STORICO PIEDICASTELLO,Acer negundo,99
+CENTRO STORICO PIEDICASTELLO,Acer palmatum,11
+CENTRO STORICO PIEDICASTELLO,Acer platanoides,24
+CENTRO STORICO PIEDICASTELLO,Acer pseudoplatanus,32
+CENTRO STORICO PIEDICASTELLO,Acer rubrum,10
+CENTRO STORICO PIEDICASTELLO,Acer saccharinum,13
+CENTRO STORICO PIEDICASTELLO,Acer tataricum,1
+CENTRO STORICO PIEDICASTELLO,Acer x freemanii,2
+CENTRO STORICO PIEDICASTELLO,Aesculus hippocastanum,91
+CENTRO STORICO PIEDICASTELLO,Ailanthus altissima,1
+CENTRO STORICO PIEDICASTELLO,Albizia julibrissin,1
+CENTRO STORICO PIEDICASTELLO,Alnus cordata,1
+CENTRO STORICO PIEDICASTELLO,Alnus incana,5
+CENTRO STORICO PIEDICASTELLO,Betula lenta,1
+CENTRO STORICO PIEDICASTELLO,Betula nigra,1
+CENTRO STORICO PIEDICASTELLO,Betula pendula,11
+CENTRO STORICO PIEDICASTELLO,Buxus sempervirens,11
+CENTRO STORICO PIEDICASTELLO,Carpinus betulus,159
+CENTRO STORICO PIEDICASTELLO,Catalpa bignonioides,10
+CENTRO STORICO PIEDICASTELLO,Cedrus,7
+CENTRO STORICO PIEDICASTELLO,Cedrus atlantica,21
+CENTRO STORICO PIEDICASTELLO,Cedrus deodara,48
+CENTRO STORICO PIEDICASTELLO,Cedrus libani,40
+CENTRO STORICO PIEDICASTELLO,Celtis australis,242
+CENTRO STORICO PIEDICASTELLO,Cercis siliquastrum,10
+CENTRO STORICO PIEDICASTELLO,Chamaecyparis,1
+CENTRO STORICO PIEDICASTELLO,Chamaecyparis lawsoniana,2
+CENTRO STORICO PIEDICASTELLO,Clerodendrum trichotomum,11
+CENTRO STORICO PIEDICASTELLO,Cornus nuttallii,1
+CENTRO STORICO PIEDICASTELLO,Corylus avellana,4
+CENTRO STORICO PIEDICASTELLO,Corylus colurna,4
+CENTRO STORICO PIEDICASTELLO,Corylus maxima,1
+CENTRO STORICO PIEDICASTELLO,Crataegus monogyna,2
+CENTRO STORICO PIEDICASTELLO,Crataegus x lavallei,9
+CENTRO STORICO PIEDICASTELLO,Cupressus,2
+CENTRO STORICO PIEDICASTELLO,Cupressus sempervirens,26
+CENTRO STORICO PIEDICASTELLO,Davidia involucrata,1
+CENTRO STORICO PIEDICASTELLO,Diospyros kaki,2
+CENTRO STORICO PIEDICASTELLO,Diospyros lotus,4
+CENTRO STORICO PIEDICASTELLO,Fagus,2
+CENTRO STORICO PIEDICASTELLO,Fagus sylvatica,34
+CENTRO STORICO PIEDICASTELLO,Ficus carica,2
+CENTRO STORICO PIEDICASTELLO,Fraxinus,59
+CENTRO STORICO PIEDICASTELLO,Fraxinus angustifolia,26
+CENTRO STORICO PIEDICASTELLO,Fraxinus angustifolia ssp. Oxycarpa,1
+CENTRO STORICO PIEDICASTELLO,Fraxinus excelsior,38
+CENTRO STORICO PIEDICASTELLO,Fraxinus ornus,80
+CENTRO STORICO PIEDICASTELLO,Ginkgo biloba,31
+CENTRO STORICO PIEDICASTELLO,Gleditsia triacanthos,1
+CENTRO STORICO PIEDICASTELLO,Hedera helix,2
+CENTRO STORICO PIEDICASTELLO,Hibiscus syriacus,1
+CENTRO STORICO PIEDICASTELLO,Ilex,14
+CENTRO STORICO PIEDICASTELLO,Ilex aquifolium,3
+CENTRO STORICO PIEDICASTELLO,Juglans nigra,1
+CENTRO STORICO PIEDICASTELLO,Juglans regia,4
+CENTRO STORICO PIEDICASTELLO,Koelreuteria paniculata,10
+CENTRO STORICO PIEDICASTELLO,Laburnum anagyroides,1
+CENTRO STORICO PIEDICASTELLO,Lagerstroemia indica,9
+CENTRO STORICO PIEDICASTELLO,Larix decidua,4
+CENTRO STORICO PIEDICASTELLO,Laurus nobilis,2
+CENTRO STORICO PIEDICASTELLO,Ligustrum,4
+CENTRO STORICO PIEDICASTELLO,Ligustrum japonicum,9
+CENTRO STORICO PIEDICASTELLO,Ligustrum lucidum,16
+CENTRO STORICO PIEDICASTELLO,Liquidambar styraciflua,43
+CENTRO STORICO PIEDICASTELLO,Liriodendron tulipifera,86
+CENTRO STORICO PIEDICASTELLO,Lonicera,3
+CENTRO STORICO PIEDICASTELLO,Magnolia,2
+CENTRO STORICO PIEDICASTELLO,Magnolia grandiflora,32
+CENTRO STORICO PIEDICASTELLO,Magnolia kobus,1
+CENTRO STORICO PIEDICASTELLO,Magnolia x soulangeana,4
+CENTRO STORICO PIEDICASTELLO,Malus,2
+CENTRO STORICO PIEDICASTELLO,Metasequoia glyptostroboides,2
+CENTRO STORICO PIEDICASTELLO,Morus,1
+CENTRO STORICO PIEDICASTELLO,Morus nigra,6
+CENTRO STORICO PIEDICASTELLO,Nerium oleander,5
+CENTRO STORICO PIEDICASTELLO,Olea europaea,9
+CENTRO STORICO PIEDICASTELLO,Osmanthus fragrans,1
+CENTRO STORICO PIEDICASTELLO,Ostrya carpinifolia,88
+CENTRO STORICO PIEDICASTELLO,Parrotia persica,75
+CENTRO STORICO PIEDICASTELLO,Paulownia tomentosa,13
+CENTRO STORICO PIEDICASTELLO,Philadelphus pubescens,2
+CENTRO STORICO PIEDICASTELLO,Photinia serrulata,3
+CENTRO STORICO PIEDICASTELLO,Photinia x fraseri,4
+CENTRO STORICO PIEDICASTELLO,Picea,1
+CENTRO STORICO PIEDICASTELLO,Picea abies,15
+CENTRO STORICO PIEDICASTELLO,Picea glauca,4
+CENTRO STORICO PIEDICASTELLO,Pinus,2
+CENTRO STORICO PIEDICASTELLO,Pinus coulteri,1
+CENTRO STORICO PIEDICASTELLO,Pinus nigra,58
+CENTRO STORICO PIEDICASTELLO,Pinus strobus,4
+CENTRO STORICO PIEDICASTELLO,Pinus sylvestris,3
+CENTRO STORICO PIEDICASTELLO,Pinus wallichiana,3
+CENTRO STORICO PIEDICASTELLO,Pittosporum tobira,1
+CENTRO STORICO PIEDICASTELLO,Platanus,1
+CENTRO STORICO PIEDICASTELLO,Platanus occidentalis,2
+CENTRO STORICO PIEDICASTELLO,Platanus orientalis,1
+CENTRO STORICO PIEDICASTELLO,Platanus x acerifolia 'Bloodgood',44
+CENTRO STORICO PIEDICASTELLO,Platanus x hispanica,192
+CENTRO STORICO PIEDICASTELLO,Populus,5
+CENTRO STORICO PIEDICASTELLO,Populus alba,7
+CENTRO STORICO PIEDICASTELLO,Populus nigra,52
+CENTRO STORICO PIEDICASTELLO,Prunus,10
+CENTRO STORICO PIEDICASTELLO,Prunus avium,19
+CENTRO STORICO PIEDICASTELLO,Prunus cerasifera,46
+CENTRO STORICO PIEDICASTELLO,Prunus laurocerasus,1
+CENTRO STORICO PIEDICASTELLO,Prunus lusitanica,1
+CENTRO STORICO PIEDICASTELLO,Prunus mahaleb,8
+CENTRO STORICO PIEDICASTELLO,Prunus padus,5
+CENTRO STORICO PIEDICASTELLO,Pseudotsuga menziesii,3
+CENTRO STORICO PIEDICASTELLO,Pterocarya rhoifolia,4
+CENTRO STORICO PIEDICASTELLO,Pyrus,1
+CENTRO STORICO PIEDICASTELLO,Pyrus communis,2
+CENTRO STORICO PIEDICASTELLO,Quercus,4
+CENTRO STORICO PIEDICASTELLO,Quercus ilex,5
+CENTRO STORICO PIEDICASTELLO,Quercus petraea,23
+CENTRO STORICO PIEDICASTELLO,Quercus pubescens,66
+CENTRO STORICO PIEDICASTELLO,Quercus robur,40
+CENTRO STORICO PIEDICASTELLO,Quercus rubra,68
+CENTRO STORICO PIEDICASTELLO,Rhododendron obtusum,2
+CENTRO STORICO PIEDICASTELLO,Rhus typhina,1
+CENTRO STORICO PIEDICASTELLO,Robinia pseudoacacia,83
+CENTRO STORICO PIEDICASTELLO,Salix,5
+CENTRO STORICO PIEDICASTELLO,Salix x sepulcralis v. chrysocoma,1
+CENTRO STORICO PIEDICASTELLO,Sambucus nigra,8
+CENTRO STORICO PIEDICASTELLO,Sequoiadendron giganteum,2
+CENTRO STORICO PIEDICASTELLO,Sophora japonica,114
+CENTRO STORICO PIEDICASTELLO,Sorbus aucuparia,1
+CENTRO STORICO PIEDICASTELLO,Sorbus thuringiaca,1
+CENTRO STORICO PIEDICASTELLO,Spiraea,1
+CENTRO STORICO PIEDICASTELLO,Taxodium distichum,3
+CENTRO STORICO PIEDICASTELLO,Taxus baccata,31
+CENTRO STORICO PIEDICASTELLO,Thuja,4
+CENTRO STORICO PIEDICASTELLO,Thuja orientalis,32
+CENTRO STORICO PIEDICASTELLO,Tilia,5
+CENTRO STORICO PIEDICASTELLO,Tilia cordata,55
+CENTRO STORICO PIEDICASTELLO,Tilia platyphyllos,17
+CENTRO STORICO PIEDICASTELLO,Tilia x europaea,42
+CENTRO STORICO PIEDICASTELLO,Ulmus,21
+CENTRO STORICO PIEDICASTELLO,Ulmus glabra,8
+CENTRO STORICO PIEDICASTELLO,Ulmus minor,13
+CENTRO STORICO PIEDICASTELLO,Ulmus pumila,7
+CENTRO STORICO PIEDICASTELLO,Wisteria sinensis,1
+CENTRO STORICO PIEDICASTELLO,Zelkova carpinifolia,5
+GARDOLO,Acer campestre,37
+GARDOLO,Acer monspessulanum,1
+GARDOLO,Acer negundo,4
+GARDOLO,Acer palmatum,1
+GARDOLO,Acer platanoides,3
+GARDOLO,Acer pseudoplatanus,24
+GARDOLO,Acer saccharinum,26
+GARDOLO,Acer tataricum ssp. ginnala,4
+GARDOLO,Acer x freemanii,19
+GARDOLO,Aesculus hippocastanum,4
+GARDOLO,Ailanthus altissima,1
+GARDOLO,Albizia julibrissin,2
+GARDOLO,Alnus,21
+GARDOLO,Alnus glutinosa,3
+GARDOLO,Betula,1
+GARDOLO,Betula nigra,18
+GARDOLO,Betula pendula,14
+GARDOLO,Carpinus betulus,53
+GARDOLO,Catalpa,1
+GARDOLO,Cedrus atlantica,2
+GARDOLO,Cedrus deodara,10
+GARDOLO,Celtis australis,211
+GARDOLO,Cercis siliquastrum,10
+GARDOLO,Corylus avellana,2
+GARDOLO,Corylus maxima,1
+GARDOLO,Cupressus,14
+GARDOLO,Cupressus sempervirens,13
+GARDOLO,Davidia involucrata,4
+GARDOLO,Fraxinus americana,3
+GARDOLO,Fraxinus angustifolia,4
+GARDOLO,Fraxinus excelsior,30
+GARDOLO,Fraxinus ornus,12
+GARDOLO,Ginkgo biloba,4
+GARDOLO,Hibiscus syriacus,1
+GARDOLO,Juglans nigra,1
+GARDOLO,Koelreuteria paniculata,1
+GARDOLO,Liquidambar styraciflua,7
+GARDOLO,Liriodendron tulipifera,8
+GARDOLO,Magnolia x soulangeana,5
+GARDOLO,Malus,1
+GARDOLO,Malus floribunda,1
+GARDOLO,Metasequoia glyptostroboides,2
+GARDOLO,Morus alba,35
+GARDOLO,Morus nigra,4
+GARDOLO,Ostrya carpinifolia,13
+GARDOLO,Parrotia persica,23
+GARDOLO,Paulownia tomentosa,2
+GARDOLO,Picea abies,10
+GARDOLO,Pinus,1
+GARDOLO,Pinus nigra,48
+GARDOLO,Pinus sylvestris,1
+GARDOLO,Platanus x acerifolia 'Bloodgood',4
+GARDOLO,Platanus x hispanica,169
+GARDOLO,Populus alba,4
+GARDOLO,Populus nigra,22
+GARDOLO,Prunus,1
+GARDOLO,Prunus avium,62
+GARDOLO,Prunus cerasifera,11
+GARDOLO,Prunus dulcis,18
+GARDOLO,Prunus serrulata,7
+GARDOLO,Pterocarya rhoifolia,3
+GARDOLO,Punica granatum,2
+GARDOLO,Pyrus calleryana,1
+GARDOLO,Pyrus communis,5
+GARDOLO,Quercus,7
+GARDOLO,Quercus ilex,9
+GARDOLO,Quercus robur,45
+GARDOLO,Quercus rubra,20
+GARDOLO,Robinia pseudoacacia,4
+GARDOLO,Salix,1
+GARDOLO,Salix babylonica,8
+GARDOLO,Sambucus nigra,2
+GARDOLO,Sophora japonica,158
+GARDOLO,Taxodium distichum,6
+GARDOLO,Thuja occidentalis,1
+GARDOLO,Tilia,6
+GARDOLO,Tilia cordata,216
+GARDOLO,Tilia platyphyllos,28
+GARDOLO,Tilia x europaea,105
+GARDOLO,Ulmus glabra,2
+GARDOLO,Ulmus minor,2
+GARDOLO,Wisteria sinensis,1
+MATTARELLO,Abies alba,2
+MATTARELLO,Abies nordmanniana,1
+MATTARELLO,Acacia,1
+MATTARELLO,Acer campestre,2
+MATTARELLO,Acer palmatum,12
+MATTARELLO,Acer platanoides,2
+MATTARELLO,Acer pseudoplatanus,1
+MATTARELLO,Acer saccharinum,2
+MATTARELLO,Aesculus hippocastanum,1
+MATTARELLO,Betula pendula,12
+MATTARELLO,Carpinus betulus,13
+MATTARELLO,Catalpa bignonioides,2
+MATTARELLO,Cedrus atlantica,2
+MATTARELLO,Cedrus deodara,3
+MATTARELLO,Celtis australis,25
+MATTARELLO,Cercis siliquastrum,7
+MATTARELLO,Cornus mas,1
+MATTARELLO,Crataegus,21
+MATTARELLO,Cupressus,25
+MATTARELLO,Cupressus sempervirens,1
+MATTARELLO,Fagus,2
+MATTARELLO,Fagus sylvatica,9
+MATTARELLO,Fraxinus excelsior,6
+MATTARELLO,Jasminum,2
+MATTARELLO,Koelreuteria paniculata,2
+MATTARELLO,Larix decidua,2
+MATTARELLO,Liriodendron tulipifera,6
+MATTARELLO,Maclura pomifera,2
+MATTARELLO,Magnolia,1
+MATTARELLO,Malus,1
+MATTARELLO,Malus floribunda,6
+MATTARELLO,Metasequoia glyptostroboides,4
+MATTARELLO,Ostrya carpinifolia,4
+MATTARELLO,Parrotia persica,3
+MATTARELLO,Picea abies,2
+MATTARELLO,Picea glauca,1
+MATTARELLO,Pinus,1
+MATTARELLO,Pinus nigra,3
+MATTARELLO,Platanus x hispanica,6
+MATTARELLO,Prunus avium,3
+MATTARELLO,Prunus cerasifera,8
+MATTARELLO,Pseudotsuga menziesii,2
+MATTARELLO,Quercus petraea,1
+MATTARELLO,Quercus robur,13
+MATTARELLO,Quercus rubra,1
+MATTARELLO,Robinia pseudoacacia,1
+MATTARELLO,Sophora japonica,13
+MATTARELLO,Sorbus aucuparia,1
+MATTARELLO,Tilia cordata,6
+MATTARELLO,Tilia x europaea,5
+MATTARELLO,Ulmus minor,9
+MATTARELLO,Wisteria sinensis,2
+MEANO,Abies alba,1
+MEANO,Acer palmatum,1
+MEANO,Acer pseudoplatanus,16
+MEANO,Alnus incana,5
+MEANO,Betula pendula,6
+MEANO,Carpinus betulus,2
+MEANO,Cedrus libani,5
+MEANO,Celtis australis,9
+MEANO,Cupressus,20
+MEANO,Cupressus sempervirens,3
+MEANO,Davidia involucrata,2
+MEANO,Fagus,3
+MEANO,Fagus sylvatica,19
+MEANO,Fraxinus angustifolia,2
+MEANO,Fraxinus excelsior,4
+MEANO,Ginkgo biloba,1
+MEANO,Malus floribunda,2
+MEANO,Morus alba,1
+MEANO,Ostrya carpinifolia,1
+MEANO,Picea abies,3
+MEANO,Pinus nigra,1
+MEANO,Platanus x hispanica,9
+MEANO,Populus alba,4
+MEANO,Prunus,1
+MEANO,Prunus avium,9
+MEANO,Prunus dulcis,1
+MEANO,Pterocarya rhoifolia,1
+MEANO,Pyrus calleryana,14
+MEANO,Quercus petraea,1
+MEANO,Quercus robur,33
+MEANO,Quercus rubra,1
+MEANO,Sophora japonica,1
+MEANO,Sorbus aucuparia,1
+MEANO,Sorbus torminalis,2
+MEANO,Tilia cordata,1
+MEANO,Tilia x europaea,19
+MEANO,Ulmus minor,1
+OLTREFERSINA,Abies,8
+OLTREFERSINA,Abies alba,3
+OLTREFERSINA,Acer,8
+OLTREFERSINA,Acer buergerianum,28
+OLTREFERSINA,Acer campestre,128
+OLTREFERSINA,Acer negundo,30
+OLTREFERSINA,Acer platanoides,78
+OLTREFERSINA,Acer pseudoplatanus,31
+OLTREFERSINA,Acer rubrum,5
+OLTREFERSINA,Acer saccharinum,18
+OLTREFERSINA,Aesculus hippocastanum,34
+OLTREFERSINA,Ailanthus altissima,9
+OLTREFERSINA,Alnus,1
+OLTREFERSINA,Alnus glutinosa,1
+OLTREFERSINA,Arbutus unedo,1
+OLTREFERSINA,Aucuba japonica,2
+OLTREFERSINA,Berberis thunbergii,1
+OLTREFERSINA,Betula,12
+OLTREFERSINA,Betula pendula,33
+OLTREFERSINA,Buxus sempervirens,5
+OLTREFERSINA,Calocedrus decurrens,1
+OLTREFERSINA,Calycanthus,2
+OLTREFERSINA,Carpinus betulus,126
+OLTREFERSINA,Cedrus atlantica,19
+OLTREFERSINA,Cedrus deodara,95
+OLTREFERSINA,Cedrus libani,5
+OLTREFERSINA,Celtis australis,341
+OLTREFERSINA,Cercis siliquastrum,23
+OLTREFERSINA,Chamaecyparis lawsoniana,14
+OLTREFERSINA,Clerodendrum trichotomum,4
+OLTREFERSINA,Cornus,2
+OLTREFERSINA,Corylus avellana,2
+OLTREFERSINA,Corylus colurna,23
+OLTREFERSINA,Corylus maxima,2
+OLTREFERSINA,Crataegus,7
+OLTREFERSINA,Crataegus monogyna,2
+OLTREFERSINA,Crataegus x lavallei,1
+OLTREFERSINA,Cupressus,17
+OLTREFERSINA,Cupressus lusitanica,1
+OLTREFERSINA,Cupressus sempervirens,38
+OLTREFERSINA,Davidia involucrata,1
+OLTREFERSINA,Diospyros kaki,3
+OLTREFERSINA,Diospyros lotus,3
+OLTREFERSINA,Elaeagnus,2
+OLTREFERSINA,Elaeagnus pungens,7
+OLTREFERSINA,Fagus,2
+OLTREFERSINA,Fagus sylvatica,20
+OLTREFERSINA,Ficus carica,5
+OLTREFERSINA,Forsythia viridissima,1
+OLTREFERSINA,Forsythia x intermedia,1
+OLTREFERSINA,Fraxinus,3
+OLTREFERSINA,Fraxinus angustifolia,26
+OLTREFERSINA,Fraxinus excelsior,22
+OLTREFERSINA,Fraxinus ornus,23
+OLTREFERSINA,Ginkgo biloba,6
+OLTREFERSINA,Gleditsia triacanthos,32
+OLTREFERSINA,Ilex,1
+OLTREFERSINA,Ilex aquifolium,1
+OLTREFERSINA,Juglans,2
+OLTREFERSINA,Juglans nigra,1
+OLTREFERSINA,Juglans regia,3
+OLTREFERSINA,Juniperus chinensis,6
+OLTREFERSINA,Juniperus drupacea,4
+OLTREFERSINA,Lagerstroemia,1
+OLTREFERSINA,Lagerstroemia indica,6
+OLTREFERSINA,Larix decidua,3
+OLTREFERSINA,Laurus nobilis,1
+OLTREFERSINA,Ligustrum lucidum,10
+OLTREFERSINA,Liquidambar styraciflua,53
+OLTREFERSINA,Liriodendron tulipifera,93
+OLTREFERSINA,Magnolia,1
+OLTREFERSINA,Morus,2
+OLTREFERSINA,Morus alba,6
+OLTREFERSINA,Morus nigra,12
+OLTREFERSINA,Nerium oleander,1
+OLTREFERSINA,Olea europaea,4
+OLTREFERSINA,Osmanthus fragrans,1
+OLTREFERSINA,Ostrya carpinifolia,17
+OLTREFERSINA,Parrotia persica,6
+OLTREFERSINA,Paulownia tomentosa,1
+OLTREFERSINA,Philadelphus,3
+OLTREFERSINA,Picea,2
+OLTREFERSINA,Picea abies,50
+OLTREFERSINA,Picea obovata,4
+OLTREFERSINA,Picea pungens,10
+OLTREFERSINA,Picea sitchensis,1
+OLTREFERSINA,Pinus coulteri,1
+OLTREFERSINA,Pinus nigra,145
+OLTREFERSINA,Pinus strobus,13
+OLTREFERSINA,Pinus sylvestris,6
+OLTREFERSINA,Pinus wallichiana,3
+OLTREFERSINA,Pittosporum tobira,1
+OLTREFERSINA,Platanus,25
+OLTREFERSINA,Platanus orientalis,1
+OLTREFERSINA,Platanus x acerifolia 'Bloodgood',35
+OLTREFERSINA,Platanus x hispanica,31
+OLTREFERSINA,Populus,1
+OLTREFERSINA,Populus alba,5
+OLTREFERSINA,Populus nigra,5
+OLTREFERSINA,Populus tremula,1
+OLTREFERSINA,Prunus,8
+OLTREFERSINA,Prunus avium,21
+OLTREFERSINA,Prunus cerasifera,106
+OLTREFERSINA,Prunus laurocerasus,5
+OLTREFERSINA,Prunus mahaleb,3
+OLTREFERSINA,Prunus serrulata,6
+OLTREFERSINA,Pseudotsuga menziesii,9
+OLTREFERSINA,Pterocarya,5
+OLTREFERSINA,Pterocarya rhoifolia,3
+OLTREFERSINA,Pyrus,8
+OLTREFERSINA,Pyrus communis,4
+OLTREFERSINA,Quercus,7
+OLTREFERSINA,Quercus cerris,5
+OLTREFERSINA,Quercus ilex,5
+OLTREFERSINA,Quercus petraea,9
+OLTREFERSINA,Quercus pubescens,1
+OLTREFERSINA,Quercus robur,88
+OLTREFERSINA,Quercus rubra,30
+OLTREFERSINA,Robinia pseudoacacia,120
+OLTREFERSINA,Salix,1
+OLTREFERSINA,Salix alba,1
+OLTREFERSINA,Salix magnifica,3
+OLTREFERSINA,Sambucus nigra,5
+OLTREFERSINA,Sequoiadendron giganteum,1
+OLTREFERSINA,Sophora japonica,8
+OLTREFERSINA,Sorbus,2
+OLTREFERSINA,Sorbus aucuparia,4
+OLTREFERSINA,Sorbus thuringiaca,2
+OLTREFERSINA,Sorbus torminalis,3
+OLTREFERSINA,Spiraea japonica,2
+OLTREFERSINA,Syringa vulgaris,1
+OLTREFERSINA,Taxodium distichum,3
+OLTREFERSINA,Taxus baccata,5
+OLTREFERSINA,Thuja,5
+OLTREFERSINA,Thuja occidentalis,1
+OLTREFERSINA,Thuja orientalis,4
+OLTREFERSINA,Tilia,10
+OLTREFERSINA,Tilia cordata,116
+OLTREFERSINA,Tilia platyphyllos,9
+OLTREFERSINA,Tilia tomentosa,1
+OLTREFERSINA,Tilia x euchlora,9
+OLTREFERSINA,Tilia x europaea,100
+OLTREFERSINA,Tilia x vulgaris,2
+OLTREFERSINA,Torreya nucifera,1
+OLTREFERSINA,Ulmus,25
+OLTREFERSINA,Ulmus glabra,11
+OLTREFERSINA,Ulmus laevis,2
+OLTREFERSINA,Ulmus minor,14
+OLTREFERSINA,Ulmus pumila,1
+OLTREFERSINA,Viburnum,2
+OLTREFERSINA,Zanthoxylum flavum,1
+POVO,Acer,1
+POVO,Acer campestre,7
+POVO,Acer palmatum,12
+POVO,Acer pseudoplatanus,8
+POVO,Aesculus hippocastanum,13
+POVO,Betula,4
+POVO,Betula pendula,3
+POVO,Carpinus betulus,1
+POVO,Cedrus deodara,3
+POVO,Celtis australis,21
+POVO,Corylus colurna,3
+POVO,Corylus maxima,2
+POVO,Cupressus,14
+POVO,Cupressus sempervirens,4
+POVO,Fagus sylvatica,1
+POVO,Fraxinus angustifolia,1
+POVO,Juglans,1
+POVO,Liriodendron tulipifera,10
+POVO,Malus,3
+POVO,Ostrya carpinifolia,17
+POVO,Parrotia persica,1
+POVO,Pinus nigra,4
+POVO,Pinus sylvestris,1
+POVO,Platanus x hispanica,2
+POVO,Prunus avium,23
+POVO,Prunus cerasifera,1
+POVO,Prunus serrulata,3
+POVO,Sophora japonica,3
+POVO,Sorbus,5
+POVO,Tilia cordata,1
+POVO,Tilia x europaea,16
+RAVINA-ROMAGNANO,Abies alba,3
+RAVINA-ROMAGNANO,Acer buergerianum,1
+RAVINA-ROMAGNANO,Acer campestre,1
+RAVINA-ROMAGNANO,Acer monspessulanum,6
+RAVINA-ROMAGNANO,Acer negundo,1
+RAVINA-ROMAGNANO,Acer platanoides,7
+RAVINA-ROMAGNANO,Acer pseudoplatanus,4
+RAVINA-ROMAGNANO,Acer saccharinum,1
+RAVINA-ROMAGNANO,Aesculus hippocastanum,3
+RAVINA-ROMAGNANO,Betula pendula,1
+RAVINA-ROMAGNANO,Carpinus betulus,5
+RAVINA-ROMAGNANO,Catalpa bignonioides,1
+RAVINA-ROMAGNANO,Cedrus atlantica,1
+RAVINA-ROMAGNANO,Cedrus deodara,6
+RAVINA-ROMAGNANO,Celtis australis,15
+RAVINA-ROMAGNANO,Clerodendrum trichotomum,10
+RAVINA-ROMAGNANO,Corylus colurna,12
+RAVINA-ROMAGNANO,Crataegus,1
+RAVINA-ROMAGNANO,Cupressus,16
+RAVINA-ROMAGNANO,Cupressus sempervirens,12
+RAVINA-ROMAGNANO,Fraxinus,3
+RAVINA-ROMAGNANO,Fraxinus americana,10
+RAVINA-ROMAGNANO,Fraxinus angustifolia,3
+RAVINA-ROMAGNANO,Fraxinus excelsior,5
+RAVINA-ROMAGNANO,Ginkgo biloba,1
+RAVINA-ROMAGNANO,Juglans nigra,1
+RAVINA-ROMAGNANO,Ligustrum japonicum,2
+RAVINA-ROMAGNANO,Ligustrum lucidum,1
+RAVINA-ROMAGNANO,Liriodendron tulipifera,3
+RAVINA-ROMAGNANO,Magnolia grandiflora,1
+RAVINA-ROMAGNANO,Malus floribunda,4
+RAVINA-ROMAGNANO,Morus alba,18
+RAVINA-ROMAGNANO,Pinus nigra,19
+RAVINA-ROMAGNANO,Pinus sylvestris,17
+RAVINA-ROMAGNANO,Platanus x hispanica,23
+RAVINA-ROMAGNANO,Populus nigra,2
+RAVINA-ROMAGNANO,Prunus avium,7
+RAVINA-ROMAGNANO,Prunus cerasifera,14
+RAVINA-ROMAGNANO,Prunus serrulata,2
+RAVINA-ROMAGNANO,Pyrus calleryana,1
+RAVINA-ROMAGNANO,Pyrus communis,7
+RAVINA-ROMAGNANO,Quercus robur,4
+RAVINA-ROMAGNANO,Quercus rubra,1
+RAVINA-ROMAGNANO,Robinia pseudoacacia,3
+RAVINA-ROMAGNANO,Sophora japonica,1
+RAVINA-ROMAGNANO,Tamarix gallica,1
+RAVINA-ROMAGNANO,Tilia cordata,34
+RAVINA-ROMAGNANO,Tilia platyphyllos,5
+RAVINA-ROMAGNANO,Tilia x europaea,18
+RAVINA-ROMAGNANO,Ulmus glabra,1
+S.GIUSEPPE-S.CHIARA,Abies alba,1
+S.GIUSEPPE-S.CHIARA,Acer buergerianum,1
+S.GIUSEPPE-S.CHIARA,Acer campestre,181
+S.GIUSEPPE-S.CHIARA,Acer monspessulanum,4
+S.GIUSEPPE-S.CHIARA,Acer negundo,41
+S.GIUSEPPE-S.CHIARA,Acer palmatum,4
+S.GIUSEPPE-S.CHIARA,Acer platanoides,21
+S.GIUSEPPE-S.CHIARA,Acer pseudoplatanus,18
+S.GIUSEPPE-S.CHIARA,Acer rubrum,8
+S.GIUSEPPE-S.CHIARA,Acer saccharinum,18
+S.GIUSEPPE-S.CHIARA,Acer x freemanii,5
+S.GIUSEPPE-S.CHIARA,Aesculus,1
+S.GIUSEPPE-S.CHIARA,Aesculus hippocastanum,405
+S.GIUSEPPE-S.CHIARA,Alnus,52
+S.GIUSEPPE-S.CHIARA,Alnus glutinosa,1
+S.GIUSEPPE-S.CHIARA,Betula,78
+S.GIUSEPPE-S.CHIARA,Betula pendula,25
+S.GIUSEPPE-S.CHIARA,Carpinus betulus,123
+S.GIUSEPPE-S.CHIARA,Catalpa bignonioides,4
+S.GIUSEPPE-S.CHIARA,Cedrus,2
+S.GIUSEPPE-S.CHIARA,Cedrus atlantica,19
+S.GIUSEPPE-S.CHIARA,Cedrus deodara,56
+S.GIUSEPPE-S.CHIARA,Cedrus libani,2
+S.GIUSEPPE-S.CHIARA,Celtis australis,83
+S.GIUSEPPE-S.CHIARA,Cercis siliquastrum,3
+S.GIUSEPPE-S.CHIARA,Chamaecyparis,2
+S.GIUSEPPE-S.CHIARA,Chamaecyparis lawsoniana,2
+S.GIUSEPPE-S.CHIARA,Cornus mas,1
+S.GIUSEPPE-S.CHIARA,Corylus colurna,45
+S.GIUSEPPE-S.CHIARA,Crataegus monogyna,1
+S.GIUSEPPE-S.CHIARA,Crataegus x lavallei,1
+S.GIUSEPPE-S.CHIARA,Cupressus,212
+S.GIUSEPPE-S.CHIARA,Cupressus arizonica,1
+S.GIUSEPPE-S.CHIARA,Cupressus lusitanica,2
+S.GIUSEPPE-S.CHIARA,Cupressus sempervirens,12
+S.GIUSEPPE-S.CHIARA,Cupressus torulosa,3
+S.GIUSEPPE-S.CHIARA,Davidia involucrata,1
+S.GIUSEPPE-S.CHIARA,Eriobotrya japonica,2
+S.GIUSEPPE-S.CHIARA,Eucalyptus cordata,1
+S.GIUSEPPE-S.CHIARA,Fagus sylvatica,18
+S.GIUSEPPE-S.CHIARA,Fraxinus,2
+S.GIUSEPPE-S.CHIARA,Fraxinus angustifolia,70
+S.GIUSEPPE-S.CHIARA,Fraxinus angustifolia ssp. Oxycarpa,1
+S.GIUSEPPE-S.CHIARA,Fraxinus excelsior,26
+S.GIUSEPPE-S.CHIARA,Fraxinus ornus,14
+S.GIUSEPPE-S.CHIARA,Ginkgo biloba,13
+S.GIUSEPPE-S.CHIARA,Ilex,2
+S.GIUSEPPE-S.CHIARA,Ilex aquifolium,15
+S.GIUSEPPE-S.CHIARA,Juglans nigra,1
+S.GIUSEPPE-S.CHIARA,Koelreuteria paniculata,1
+S.GIUSEPPE-S.CHIARA,Laurus nobilis,3
+S.GIUSEPPE-S.CHIARA,Ligustrum,11
+S.GIUSEPPE-S.CHIARA,Ligustrum japonicum,12
+S.GIUSEPPE-S.CHIARA,Ligustrum lucidum,9
+S.GIUSEPPE-S.CHIARA,Liquidambar styraciflua,27
+S.GIUSEPPE-S.CHIARA,Liriodendron tulipifera,76
+S.GIUSEPPE-S.CHIARA,Magnolia,2
+S.GIUSEPPE-S.CHIARA,Magnolia grandiflora,27
+S.GIUSEPPE-S.CHIARA,Malus,1
+S.GIUSEPPE-S.CHIARA,Morus,1
+S.GIUSEPPE-S.CHIARA,Morus alba,4
+S.GIUSEPPE-S.CHIARA,Morus nigra,65
+S.GIUSEPPE-S.CHIARA,Nerium oleander,1
+S.GIUSEPPE-S.CHIARA,Osmanthus fragrans,1
+S.GIUSEPPE-S.CHIARA,Ostrya carpinifolia,40
+S.GIUSEPPE-S.CHIARA,Parrotia persica,147
+S.GIUSEPPE-S.CHIARA,Parthenocissus,13
+S.GIUSEPPE-S.CHIARA,Paulownia tomentosa,5
+S.GIUSEPPE-S.CHIARA,Photinia serrulata,2
+S.GIUSEPPE-S.CHIARA,Photinia x fraseri,6
+S.GIUSEPPE-S.CHIARA,Picea,1
+S.GIUSEPPE-S.CHIARA,Picea abies,17
+S.GIUSEPPE-S.CHIARA,Picea pungens,1
+S.GIUSEPPE-S.CHIARA,Pinus bungeana,1
+S.GIUSEPPE-S.CHIARA,Pinus cembra,1
+S.GIUSEPPE-S.CHIARA,Pinus halepensis,3
+S.GIUSEPPE-S.CHIARA,Pinus nigra,23
+S.GIUSEPPE-S.CHIARA,Pinus pinaster,3
+S.GIUSEPPE-S.CHIARA,Pinus strobus,2
+S.GIUSEPPE-S.CHIARA,Pinus sylvestris,2
+S.GIUSEPPE-S.CHIARA,Pinus wallichiana,1
+S.GIUSEPPE-S.CHIARA,Pittosporum tobira,1
+S.GIUSEPPE-S.CHIARA,Platanus,1
+S.GIUSEPPE-S.CHIARA,Platanus occidentalis,16
+S.GIUSEPPE-S.CHIARA,Platanus orientalis,20
+S.GIUSEPPE-S.CHIARA,Platanus x acerifolia 'Bloodgood',135
+S.GIUSEPPE-S.CHIARA,Platanus x hispanica,53
+S.GIUSEPPE-S.CHIARA,Populus nigra,17
+S.GIUSEPPE-S.CHIARA,Prunus,7
+S.GIUSEPPE-S.CHIARA,Prunus avium,8
+S.GIUSEPPE-S.CHIARA,Prunus cerasifera,157
+S.GIUSEPPE-S.CHIARA,Prunus dulcis,1
+S.GIUSEPPE-S.CHIARA,Prunus laurocerasus,1
+S.GIUSEPPE-S.CHIARA,Prunus padus,1
+S.GIUSEPPE-S.CHIARA,Pseudotsuga menziesii,16
+S.GIUSEPPE-S.CHIARA,Pterocarya,1
+S.GIUSEPPE-S.CHIARA,Pterocarya rhoifolia,2
+S.GIUSEPPE-S.CHIARA,Pyrus,2
+S.GIUSEPPE-S.CHIARA,Pyrus calleryana,116
+S.GIUSEPPE-S.CHIARA,Pyrus communis,1
+S.GIUSEPPE-S.CHIARA,Quercus,1
+S.GIUSEPPE-S.CHIARA,Quercus ilex,2
+S.GIUSEPPE-S.CHIARA,Quercus petraea,3
+S.GIUSEPPE-S.CHIARA,Quercus robur,16
+S.GIUSEPPE-S.CHIARA,Quercus rubra,24
+S.GIUSEPPE-S.CHIARA,Rhododendron obtusum,1
+S.GIUSEPPE-S.CHIARA,Robinia pseudoacacia,34
+S.GIUSEPPE-S.CHIARA,Salix x sepulcralis v. chrysocoma,1
+S.GIUSEPPE-S.CHIARA,Sambucus nigra,1
+S.GIUSEPPE-S.CHIARA,Sophora japonica,52
+S.GIUSEPPE-S.CHIARA,Sorbus aucuparia,9
+S.GIUSEPPE-S.CHIARA,Sorbus thuringiaca,4
+S.GIUSEPPE-S.CHIARA,Sorbus torminalis,1
+S.GIUSEPPE-S.CHIARA,Spiraea,1
+S.GIUSEPPE-S.CHIARA,Taxus baccata,8
+S.GIUSEPPE-S.CHIARA,Thuja plicata,2
+S.GIUSEPPE-S.CHIARA,Tilia,2
+S.GIUSEPPE-S.CHIARA,Tilia cordata,31
+S.GIUSEPPE-S.CHIARA,Tilia platyphyllos,2
+S.GIUSEPPE-S.CHIARA,Tilia x euchlora,6
+S.GIUSEPPE-S.CHIARA,Tilia x europaea,118
+S.GIUSEPPE-S.CHIARA,Tilia x vulgaris,17
+S.GIUSEPPE-S.CHIARA,Ulmus,4
+S.GIUSEPPE-S.CHIARA,Ulmus glabra,4
+S.GIUSEPPE-S.CHIARA,Ulmus laevis,1
+S.GIUSEPPE-S.CHIARA,Ulmus minor,5
+S.GIUSEPPE-S.CHIARA,Ulmus pumila,5
+SARDAGNA,Acer platanoides,2
+SARDAGNA,Acer pseudoplatanus,11
+SARDAGNA,Cupressus,6
+SARDAGNA,Morus nigra,1
+SARDAGNA,Ostrya carpinifolia,1
+SARDAGNA,Parrotia persica,9
+SARDAGNA,Prunus serrulata,1
+SARDAGNA,Pseudotsuga menziesii,1
+SARDAGNA,Robinia pseudoacacia,6
+VILLAZZANO,Abies alba,1
+VILLAZZANO,Acer campestre,7
+VILLAZZANO,Acer opalus,1
+VILLAZZANO,Acer platanoides,4
+VILLAZZANO,Acer pseudoplatanus,14
+VILLAZZANO,Acer tataricum ssp. ginnala,1
+VILLAZZANO,Alnus glutinosa,1
+VILLAZZANO,Berberis thunbergii,20
+VILLAZZANO,Betula pendula,3
+VILLAZZANO,Carpinus betulus,33
+VILLAZZANO,Cedrus atlantica,1
+VILLAZZANO,Cedrus deodara,3
+VILLAZZANO,Celtis australis,19
+VILLAZZANO,Cornus,5
+VILLAZZANO,Cornus sanguinea,2
+VILLAZZANO,Corylus avellana,2
+VILLAZZANO,Corylus colurna,1
+VILLAZZANO,Cupressus,25
+VILLAZZANO,Cupressus sempervirens,13
+VILLAZZANO,Davidia involucrata,1
+VILLAZZANO,Diospyros kaki,1
+VILLAZZANO,Eriobotrya japonica,1
+VILLAZZANO,Fagus sylvatica,2
+VILLAZZANO,Ficus carica,1
+VILLAZZANO,Fraxinus,2
+VILLAZZANO,Fraxinus americana,22
+VILLAZZANO,Fraxinus excelsior,4
+VILLAZZANO,Fraxinus ornus,2
+VILLAZZANO,Gleditsia triacanthos,27
+VILLAZZANO,Juglans nigra,1
+VILLAZZANO,Liquidambar styraciflua,4
+VILLAZZANO,Liriodendron tulipifera,10
+VILLAZZANO,Malus floribunda,6
+VILLAZZANO,Malus sylvestris,2
+VILLAZZANO,Morus nigra,4
+VILLAZZANO,Ostrya carpinifolia,6
+VILLAZZANO,Parrotia persica,5
+VILLAZZANO,Picea abies,2
+VILLAZZANO,Pinus nigra,3
+VILLAZZANO,Platanus x acerifolia 'Bloodgood',1
+VILLAZZANO,Platanus x hispanica,3
+VILLAZZANO,Populus nigra,11
+VILLAZZANO,Prunus,2
+VILLAZZANO,Prunus avium,33
+VILLAZZANO,Prunus domestica,4
+VILLAZZANO,Pyrus calleryana,8
+VILLAZZANO,Pyrus communis,2
+VILLAZZANO,Quercus petraea,1
+VILLAZZANO,Quercus robur,8
+VILLAZZANO,Robinia pseudoacacia,13
+VILLAZZANO,Sophora japonica,14
+VILLAZZANO,Sorbus,2
+VILLAZZANO,Sorbus torminalis,1
+VILLAZZANO,Taxus baccata,3
+VILLAZZANO,Tilia cordata,35
+VILLAZZANO,Tilia x europaea,10
+VILLAZZANO,Ulmus,1
+VILLAZZANO,Viburnum sieboldii,2
