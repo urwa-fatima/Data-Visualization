@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <title>Box Plot with D3.js</title>
+</head>
+
+<body>
+    <!-- Create a div where the graph will take place -->
+    <div id="my_dataviz"></div>
+    <script>
+
+        // set the dimensions and margins of the graph
+        var margin = { top: 10, right: 30, bottom: 30, left: 40 },
+            width = 1300 - margin.left - margin.right,
+            height = 400 - margin.top - margin.bottom;
+
+        // append the svg object to the body of the page
+        var svg = d3.select("#my_dataviz")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+        // Read the data and compute summary statistics for each specie
+        d3.csv("../data/export_data_box_plot.csv", function (data) {
+            var colorScale = d3.scaleOrdinal(d3.schemeCategory20)
+                .domain(Object.keys(data));
+            sumstat = [];
+            globalCounts = [];
+            for (var [key, groupCount] of Object.entries(data)) {
+                if (groupCount.height_list) {
+                    groupCount.height_list = splitString(groupCount.height_list)
+                    groupCount.height_list.forEach(element => {
+                        globalCounts.push(element)
+                    })
+                    // Sort group counts so quantile methods work
+                    groupCount.height_list = groupCount.height_list.sort(sortNumber);
+                    var record = {};
+                    var localMin = d3.min(groupCount.height_list);
+                    var localMax = d3.max(groupCount.height_list);
+                    // Compute quartiles, median, inter quantile range min and max --> these info are then used to draw the box.
+                    record["key"] = groupCount.Name;
+                    record["value"] = {
+                        "q1": d3.quantile(groupCount.height_list, .25),
+                        "median": d3.quantile(groupCount.height_list, .5),
+                        "q3": d3.quantile(groupCount.height_list, .75),
+                        "interQuantileRange": d3.quantile(groupCount.height_list, .75) - d3.quantile(groupCount.height_list, .25),
+                        "min": localMin,
+                        "max": localMax
+                    }
+
+                    record["color"] = colorScale(key);
+                    sumstat.push(record);
+                }
+            }
+            // Show the X scale
+            var x = d3.scaleBand()
+                .range([0, width])
+                .domain(['Celtis australis', 'Aesculus hippocastanum', 'Carpinus betulus', 'Tilia cordata', 'Platanus x hispanica', 'Tilia x europaea', 'Acer campestre', 'Cupressus', 'Sophora japonica', 'Prunus cerasifera'])
+                .paddingInner(1)
+                .paddingOuter(.5)
+            svg.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x))
+
+            // Show the Y scale
+            // Compute a global y scale based on the global counts
+            var min = d3.min(globalCounts);
+            var max = d3.max(globalCounts);
+            var y = d3.scaleLinear()
+                .domain([min, max])
+                .range([height, 0])
+            svg.append("g").call(d3.axisLeft(y))
+
+            // Show the main vertical line
+            svg
+                .selectAll("vertLines")
+                .data(sumstat)
+                .enter()
+                .append("line")
+                .attr("x1", function (d) { return (x(d.key)) })
+                .attr("x2", function (d) { return (x(d.key)) })
+                .attr("y1", function (d) { return (y(d.value.min)) })
+                .attr("y2", function (d) { return (y(d.value.max)) })
+                .attr("stroke", "black")
+                .style("width", 40)
+
+            // rectangle for the main box
+            var boxWidth = 100
+            svg
+                .selectAll("boxes")
+                .data(sumstat)
+                .enter()
+                .append("rect")
+                .attr("x", function (d) { return (x(d.key) - boxWidth / 2) })
+                .attr("y", function (d) { return (y(d.value.q3)) })
+                .attr("height", function (d) { return (y(d.value.q1) - y(d.value.q3)) })
+                .attr("width", boxWidth)
+                .attr("stroke", "black")
+                .attr("fill", function (d) {
+                    return d.color;
+                }
+                )
+
+            // Show the median
+            svg
+                .selectAll("medianLines")
+                .data(sumstat)
+                .enter()
+                .append("line")
+                .attr("x1", function (d) { return (x(d.key) - boxWidth / 2) })
+                .attr("x2", function (d) { return (x(d.key) + boxWidth / 2) })
+                .attr("y1", function (d) { return (y(d.value.median)) })
+                .attr("y2", function (d) { return (y(d.value.median)) })
+                .attr("stroke", "black")
+                .style("width", 80)
+        })
+        function splitString(canopy_cover_list_string) {
+            return canopy_cover_list_string.replace("[", "").replace("]", "").match(/\d+(?:\.\d+)?/g).map(Number)
+        }
+        // Perform a numeric sort on an array
+        function sortNumber(a, b) {
+            return a - b;
+        }
+    </script>
+</body>
