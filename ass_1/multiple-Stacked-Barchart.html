@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="text/javascript" src="/d3-7.6.1/package/dist/d3.js"></script>
+    <script type="text/javascript" src="../d3-7.6.1/package/dist/d3.js"></script>
     <style type="text/css">
         rect:hover {
             fill: orange;
@@ -100,7 +100,7 @@
         var colors = ['#7fc97f', '#beaed4', '#fdc086', '#ffff99', '#386cb0', '#f0027f', '#bf5b17', '#666666'];
 
 
-        d3.csv("data/grouped_region_data.csv").then(function (data) {
+        d3.csv("../data/grouped_region_data.csv").then(function (data) {
             console.log(data)
 
             var regionLst = [...new Set(data.map(d => d.Region))];
@@ -112,15 +112,6 @@
             var totalByRegion = d3.rollup(data, d => d3.sum(d, x => x.count), d => d.Region)
 
             console.log(totalByTreeType);
-
-            // var CompleteTopFiveTreeList = [];
-            // var D1, RegionAndCountInCA;
-
-            // for (let i = 0; i < topFiveTreeTypes.length; i++) {
-            //     D1 = groupbyTreeType.get(topFiveTreeTypes[i]);
-            //     RegionAndCountInCA = [D1.map(d => [d.Region, d.count])];
-            //     CompleteTopFiveTreeList.push(RegionAndCountInCA);
-            // }
 
             // ---------------------------------------------------------
 
