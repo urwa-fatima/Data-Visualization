@@ -32,13 +32,18 @@
             .attr("transform", `translate(${margin.left},${margin.top})`);
 
         // Parse the Data
-        d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_stacked.csv").then(function (data) {
-
+        // d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_stacked.csv").then(function (data) {
+        d3.csv("../data/grouped_region_data.csv").then(function (data) {
             // List of subgroups = header of the csv files = soil condition here
             const subgroups = data.columns.slice(1)
             // console.log(subgroups);
             // List of groups = species here = value of the first column called group -> I show them on the X axis
-            const groups = data.map(d => (d.group))
+            const groups = data.map(d => (d.Region))
+
+            var colorLst = ['#B22222', '#B8860B', '#808000', '#DAA520', '#008080', '#2F4F4F', '#1E90FF', '#000080', '#8A2BE2', '#8B008B', '	#F5DEB3', '	#A0522D', '	#696969'];
+
+            // var colorsObj = new Map();
+            // colors.set()
 
 
             // Add X axis
@@ -60,7 +65,7 @@
             // color palette = one color per subgroup
             const color = d3.scaleOrdinal()
                 .domain(subgroups)
-                .range(['#e41a1c', '#377eb8', '#4daf4a'])
+                .range(colorLst)
 
             //stack the data? --> stack per subgroup
             const stackedData = d3.stack()
