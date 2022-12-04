@@ -17,7 +17,7 @@
         .toolTip {
             position: absolute;
             pointer-events: none;
-            display: inline;
+            display: none;
             min-width: 50px;
             height: auto;
             background: none repeat scroll 0 0 #ffffff;
@@ -51,6 +51,9 @@
 </head>
 
 <body>
+    <div style="text-align: center;">
+        <h1>Horizontal Bar Chart</h1>
+    </div>
     <div id="my_dataviz"></div>
     <script type="text/javascript">
         var tooltip = d3.select("#my_dataviz").append("div").attr("class", "toolTip");
@@ -69,7 +72,7 @@
 
         // Parse the Data
         d3.csv("../data/export_data.csv").then(function (data) {
-
+            console.log(data.count)
             // Add X axis
             const x = d3.scaleLinear()
                 .domain([0, 1100])
@@ -99,18 +102,28 @@
                 .attr("height", y.bandwidth())
                 .attr("fill", "#69b3a2")
                 .on("mousemove", function (event, d) {
+                    var canopy_cover = parseFloat(d.canopy_cov);
                     // Replace hard coded vals (50, 90) with 50% of the tooltip wioth and height + a top buffer
                     tooltip
                         .style("left", event.pageX - 50 + "px")
                         .style("top", event.pageY - 90 + "px")
                         .style("display", "inline-block")
-                        .html((d.Name) + "<br><span>" + "canopy cover" + (d.canopy_cov) + "</span>");
+                        .html((d.Name) + "<br><span>" + "average canopy cover: " + (canopy_cover.toFixed(2)) + "</span>" + "<br><span>" + "tree abundance: " + (d.count));
                 })
                 .on("mouseout", function (d) { tooltip.style("display", "none"); });
         })
 
 
     </script>
+    <div style=" font-size:20px; margin-left:1%;">
+        <h3>Explanation</h3>
+        <span>In the above Horizontal Bar Chart depicted the total abundance of different type of trees in Trento city.
+            We have chosen 10 tree types with largest number of abundance</span>
+        <span>Type of tree with largest abundance is Celtis australis, it's equal to 1028. Tree with rare spread number
+            is Prunus cerasifera and it's equal to 350.</span>
+        <span></span>
+    </div>
+
 </body>
 
 
