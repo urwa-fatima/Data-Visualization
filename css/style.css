@@ -1,4 +1,4 @@
-body {
+/* body {
     padding: 50px 150px 0 150px;
     font-family: 'Fira Sans';
 }
@@ -26,5 +26,73 @@ body {
 }
 
 .title-project {
+    text-align: center;
+} */
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+* {
+  font-family: 'Fira Sans';
+}
+
+body {
+  background-color: #fff;
+  color: darkslategrey;
+}
+
+h1,h2 {
+  font-family: 'Roboto Slab';
+  
+}
+
+
+
+ul,
+ol {
+  font-family: 'Roboto Slab';
+  
+  color: rgb(41, 128, 62);
+}
+
+.colored-list {
+  color: rgb(90, 11, 100);
+}
+
+/* per pagina 04 */
+
+.container {
+  margin: auto;
+  width: 80%;
+}
+
+.container h1 {
+  
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.main-text {
+  margin: auto;
+  width: 10%;
+}
+
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 10px;
+  align-content: center;
+}
+.graph_center{
     text-align: center;
 }
