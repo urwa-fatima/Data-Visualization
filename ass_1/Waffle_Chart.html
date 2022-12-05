@@ -58,7 +58,7 @@
 
         var color = d3.scale.category10();
 
-        d3.csv("data/Waffle_Chart.csv", function (error, data)
+        d3.csv("../data/Waffle_Chart.csv", function (error, data)
         {
             //total
             total = d3.sum(data, function (d) {
