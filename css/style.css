@@ -45,7 +45,13 @@ h1,h2 {
   
 }
 
-
+a { 
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: blue;
+}
 
 ul,
 ol {
