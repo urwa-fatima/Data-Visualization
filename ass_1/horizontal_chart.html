@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bar chart with D3.js</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script type="text/javascript" src="../d3-7.6.1/package/dist/d3.js"></script>
+    <style type="text/css">
+        rect:hover {
+            fill: orange;
+        }
+
+        .toolTip {
+            position: absolute;
+            pointer-events: none;
+            display: none;
+            min-width: 50px;
+            height: auto;
+            background: none repeat scroll 0 0 #ffffff;
+            padding: 9px 14px 6px 14px;
+            border-radius: 2px;
+            text-align: center;
+            line-height: 1.3;
+            color: #5B6770;
+            box-shadow: 0px 3px 9px rgba(0, 0, 0, .15);
+        }
+
+        .toolTip:after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 12px solid white;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            margin-left: -12px;
+        }
+
+        .toolTip span {
+            font-weight: 500;
+            color: #081F2C;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>Horizontal Bar Chart</h1>
+    </div>
+    <div id="my_dataviz"></div>
+    <script type="text/javascript">
+        var tooltip = d3.select("#my_dataviz").append("div").attr("class", "toolTip");
+
+        const margin = { top: 70, right: 30, bottom: 40, left: 130 },
+            width = 500 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+        // append the svg object to the body of the page
+        const svg = d3.select("body")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+        // Parse the Data
+        d3.csv("../data/export_data.csv").then(function (data) {
+            console.log(data.count)
+            // Add X axis
+            const x = d3.scaleLinear()
+                .domain([0, 1100])
+                .range([0, width]);
+            svg.append("g")
+                .attr("transform", `translate(0, ${height})`)
+                .call(d3.axisBottom(x))
+                .selectAll("text")
+                .attr("transform", "translate(-10,0)rotate(-45)")
+                .style("text-anchor", "end");
+
+            // Y axis
+            const y = d3.scaleBand()
+                .range([0, height])
+                .domain(data.map(d => d.Name))
+                .padding(.1);
+            svg.append("g")
+                .call(d3.axisLeft(y))
+
+            //Bars
+            svg.selectAll("myRect")
+                .data(data)
+                .join("rect")
+                .attr("x", x(0))
+                .attr("y", d => y(d.Name))
+                .attr("width", d => x(d.count))
+                .attr("height", y.bandwidth())
+                .attr("fill", "#69b3a2")
+                .on("mousemove", function (event, d) {
+                    var canopy_cover = parseFloat(d.canopy_cov);
+                    // Replace hard coded vals (50, 90) with 50% of the tooltip wioth and height + a top buffer
+                    tooltip
+                        .style("left", event.pageX - 50 + "px")
+                        .style("top", event.pageY - 90 + "px")
+                        .style("display", "inline-block")
+                        .html((d.Name) + "<br><span>" + "average canopy cover: " + (canopy_cover.toFixed(2)) + "</span>" + "<br><span>" + "tree abundance: " + (d.count));
+                })
+                .on("mouseout", function (d) { tooltip.style("display", "none"); });
+        })
+
+
+    </script>
+    <div style=" font-size:20px; margin-left:1%;">
+        <h3>Explanation</h3>
+        <span>In the above Horizontal Bar Chart depicted the total abundance of different type of trees in Trento city.
+            We have chosen 10 tree types with largest number of abundance</span>
+        <span>Type of tree with largest abundance is Celtis australis, it's equal to 1028. Tree with rare spread number
+            is Prunus cerasifera and it's equal to 350.</span>
+        <span></span>
+    </div>
+
+</body>
+
+
+</html>
