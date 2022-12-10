@@ -139,6 +139,10 @@ rect:hover {
   color: #081F2C;
 }
 
+#waffle {
+  margin-bottom: 30px;
+}
+
 .svg-container {
   display: inline-block;
   position: relative;

@@ -9,24 +9,17 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script type="text/javascript" src="../d3-7.6.1/package/dist/d3.js"></script>
     <link rel="stylesheet" href="../css/style.css">
-    <title>Multiple Stacked Barchart with D3.js</title>
+    <title>Group Avatar: Multiple Stacked Barchart with D3.js</title>
 </head>
 
 <body>
-    <div style="text-align: center;">
+    <div class="back-home"><a href="../assignment_one.html">Back</a></div>
+    <div class="graph_center">
         <h1>The Stacked Barchart with Small Multiple Neighborhood Vs Tree Type</h1>
     </div>
     <div id="my_dataviz"></div>
-    <div class="container">
-        <p>
-            This is a multiple stacked barchart to display
-            the amount of top 5 tree types in each neighborhood region.
-            Trento is divided into 12 different neighborhoods.
-            Since, there are 225 different tree types, we have combined all the other
-            tree types into the category of <span>Others</span> after showing the overall top five tree
-            types in Trento. The Total Category is to give the holistic Overview of the amount of trees in each region
-        </p>
-    </div>
+
+
     <script type="text/javascript">
         var tooltip = d3.select("#my_dataviz")
             .append("div")
@@ -166,7 +159,16 @@
 
 
     </script>
-
+    <div class="container">
+        <p>
+            This is a multiple stacked barchart to display
+            the amount of top 5 tree types in each neighborhood region.
+            Trento is divided into 12 different neighborhoods.
+            Since, there are 225 different tree types, we have combined all the other
+            tree types into the category of <span>Others</span> after showing the overall top five tree
+            types in Trento. The Total Category is to give the holistic Overview of the amount of trees in each region
+        </p>
+    </div>
 
 </body>
 
