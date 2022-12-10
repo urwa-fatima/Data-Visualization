@@ -22,13 +22,13 @@ a {
 }
 
 a:hover {
-  color: rgb(41, 128, 62);
+  color: rgb(1, 51, 13);
 }
 
 ul,
 ol {
   font-family: 'Roboto Slab';
-  color: rgb(41, 128, 62);
+  color: rgb(1, 51, 13);
 }
 
 .colored-list {
@@ -90,8 +90,8 @@ ol {
 
 /* On mouse-over, add a deeper shadow */
 .card1:hover {
-  background-color: greenyellow;
-
+  background-color: #F4A6B3;
+  color: rgb(4, 5, 4) !important;
 }
 
 rect:hover {
