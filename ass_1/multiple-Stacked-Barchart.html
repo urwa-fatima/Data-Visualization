@@ -29,18 +29,19 @@
 
         // set the dimensions and margins of the graph
         var margin = { top: 30, right: 30, bottom: 40, left: 200 },
-            width = 700 - margin.left - margin.right,
+            width = 900 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
-        var colors = ['#B22222', '#B8860B', '#808000', '#DAA520', '#008080', '#2F4F4F', '#1E90FF', '#000080', '#8A2BE2', '#8B008B', '	#F5DEB3', '	#A0522D', '	#696969'];
+        var colors = ['#66976B', '#1D382B', '#D68C2C', '#A54A2B',
+            '#C7A98C', '#53070D', '#F4A6B3', '#B7264A', '#C5BE6A',
+            '#364277', '#8FBFCC', '#226D7B', '#002E6B'];
         var topFiveTreeTypes = ['Celtis australis', 'Aesculus hippocastanum', 'Carpinus betulus', 'Tilia cordata', 'Platanus x hispanica'];
 
         d3.csv("../data/count_region_treetype_totals.csv").then(function (data) {
 
             // var regionLst = data.columns.slice(1, data.columns.length - 1);
-            var regionLst = d3.map(data, d => d.Regions);
-            var keys = data.columns.slice(1, 8);
-            console.log(keys)
+            var regionLst = d3.map(data, d => d.Regions); //groups
+            var treetypes = data.columns.slice(1); // subgroups
 
             // var groupbyRegion = d3.group(data, d => d.Region)
             // var groupbyTreeType = d3.group(data, d => d.Name)
@@ -49,15 +50,44 @@
 
             // console.log(data);
             // console.log(regionLst);
-            var stack = d3.stack()
-                .keys(keys)
-                .order(d3.stackOrderNone)
-                .offset(d3.stackOffsetNone);
 
-            var series = stack(data);
-            console.log(series);
+            var colorScale = d3.scaleOrdinal()
+                .domain(treetypes)
+                .range(colors);
+            // .range(d3.schemeSet3);
+
+            // var stack = d3.stack()
+            //     .keys(keys)
+            //     .order(d3.stackOrderNone)
+            //     .offset(d3.stackOffsetNone);
+
+            // var series = stack(data);
+            // console.log(series);
+
+
             // ---------------------------------------------------------
+            //Create Y-axis once 
+            var y = d3.scaleBand()
+                .range([0, height])
+                .domain(regionLst)
+                .padding(.1);
 
+            //-------------------------------------------------------------
+
+            //defineing width for each tree graph
+
+            var maxval = d3.max(data, d => +d['Grand Total']);
+
+            var treegraph_width = width / treetypes.length;
+
+            for (var i = 0; i < treetypes.length; i++) {
+
+                var treegroup = treetypes[i];
+
+
+
+
+            };
             var svg = d3.select("#my_dataviz")
                 .append("svg")
                 .attr("width", width + margin.left + margin.right)
@@ -73,17 +103,9 @@
                 .domain([0, 3000])
                 .range([0, width]);
 
-            var y = d3.scaleBand()
-                .range([0, height])
-                .domain(regionLst)
-                .padding(.1);
             svg.append("g")
                 .call(d3.axisLeft(y));
 
-            var colorScale = d3.scaleOrdinal()
-                // .domain(regionLst)
-                .range(colors);
-            // .range(d3.schemeSet3);
 
 
             //Bars
