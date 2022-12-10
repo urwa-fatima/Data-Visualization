@@ -77,6 +77,14 @@ ol {
   text-align: center;
 }
 
+.div-assign {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
 .card1 {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -101,7 +109,7 @@ rect:hover {
 .toolTip {
   position: absolute;
   pointer-events: none;
-  display: inline;
+  display: none;
   min-width: 50px;
   height: auto;
   background: none repeat scroll 0 0 #ffffff;

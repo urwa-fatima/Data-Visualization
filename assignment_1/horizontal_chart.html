@@ -5,75 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Bar chart with D3.js</title>
-
+    <title>Group Avatar: Bar chart with D3.js</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script type="text/javascript" src="../d3-7.6.1/package/dist/d3.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
     <style type="text/css">
-        rect:hover {
-            fill: orange;
-        }
 
-        .toolTip {
-            position: absolute;
-            pointer-events: none;
-            display: none;
-            min-width: 50px;
-            height: auto;
-            background: none repeat scroll 0 0 #ffffff;
-            padding: 9px 14px 6px 14px;
-            border-radius: 2px;
-            text-align: center;
-            line-height: 1.3;
-            color: #5B6770;
-            box-shadow: 0px 3px 9px rgba(0, 0, 0, .15);
-        }
-
-        .toolTip:after {
-            content: "";
-            width: 0;
-            height: 0;
-            border-left: 12px solid transparent;
-            border-right: 12px solid transparent;
-            border-top: 12px solid white;
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            margin-left: -12px;
-        }
-
-        .toolTip span {
-            font-weight: 500;
-            color: #081F2C;
-        }
     </style>
 
 </head>
 
 <body>
-    <div style="text-align: center;">
+    <div class="graph_center">
         <h1>Horizontal Bar Chart</h1>
     </div>
-<<<<<<< HEAD:ass_1/horizontal_chart.html
-    <svg id="chart" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
-    </svg>
-    <!-- <div id="my_dataviz"></div> -->
-    <script type="text/javascript">
-
-        const margin = { top: 70, right: 30, bottom: 40, left: 130 },
-            width = 960 - margin.left - margin.right,
-            height = 500 - margin.top - margin.bottom;
-        var aspect = width / height,
-            chart = d3.select('#chart');
-        d3.select(window)
-            .on("resize", function () {
-                var targetWidth = chart.node().getBoundingClientRect().width;
-                chart.attr("width", targetWidth);
-                chart.attr("height", targetWidth / aspect);
-            });
-        var tooltip = chart.append("div").attr("class", "toolTip");
-
-=======
     <div id="my_dataviz">
         <svg id="chart" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
         </svg>
@@ -92,7 +37,6 @@
             });
         var tooltip = d3.select("#my_dataviz").append("div").attr("class", "toolTip");
 
->>>>>>> main:assignment_1/horizontal_chart.html
 
         // append the svg object to the body of the page
         const svg = d3.select("#chart")
@@ -146,7 +90,7 @@
 
 
     </script>
-    <div style=" font-size:20px; margin-left:1%;">
+    <div class="container">
         <h3>Explanation</h3>
         <span>In the above Horizontal Bar Chart depicted the total abundance of different type of trees in Trento city.
             We have chosen 10 tree types with largest number of abundance</span>
@@ -154,7 +98,6 @@
             is Prunus cerasifera and it's equal to 350.</span>
         <span></span>
     </div>
-
 </body>
 
 
