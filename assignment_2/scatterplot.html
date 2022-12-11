@@ -96,14 +96,14 @@
                 .call(d3.axisLeft(y));
 
             // Color scale: takes treetype name and return a color
-            var mycolors = ['#66976B', '#1D382B', '#D68C2C', '#A54A2B',
-                '#C7A98C', '#53070D', '#F4A6B3', '#B7264A', '#C5BE6A',
-                '#364277', '#8FBFCC', '#226D7B', '#002E6B'];
+            // var mycolors = ['#66976B', '#1D382B', '#D68C2C', '#A54A2B',
+            //     '#C7A98C', '#53070D', '#F4A6B3', '#B7264A', '#C5BE6A',
+            //     '#364277', '#8FBFCC', '#226D7B', '#002E6B'];
 
-            var topFiveTreeTypes = ['Celtis australis', 'Aesculus hippocastanum', 'Carpinus betulus', 'Tilia cordata', 'Platanus x hispanica'];
             const color = d3.scaleOrdinal()
                 .domain(TotalTreeTypes)
-                .range(mycolors);
+                .range(d3.schemeSet2);
+            // .range(mycolors);
             // .range(d3["schemeCategory10"])
 
 
@@ -156,6 +156,26 @@
                 .style("fill", function (d) { return color(d["Name"]) })
                 .on("mouseover", highlight)
                 .on("mouseleave", doNotHighlight)
+
+            // Add a legend (interactive)
+            svg
+                .selectAll("myLegend")
+                .data(TotalTreeTypes)
+                .enter()
+                .append('g')
+                .append("text")
+                .attr('x', width - 100)
+                .attr('y', function (d, i) { return 30 + i * 60 })
+                .text(function (d, i) { return d[i] })
+                .style("fill", function (d, i) { return color(d[i]) })
+                .style("font-size", 10)
+                .on("click", function (d, i) {
+                    // is the element currently visible ?
+                    currentOpacity = d3.selectAll("." + d[i]).style("opacity")
+                    // Change the opacity: from 0 to 1 or from 1 to 0
+                    d3.selectAll("." + d[i]).transition().style("opacity", currentOpacity == 1 ? 0 : 1)
+
+                })
 
         })
     </script>
