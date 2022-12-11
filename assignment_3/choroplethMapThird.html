@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Avatar: Choropleth Map 3</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <!-- <link href="../css/style.css" rel="stylesheet"> -->
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <div class="back-home"><a href="../assignment_three.html">Back</a></div>
+    <div style="text-align: center;">
+        <h1>Choropleth Map 1</h1>
+    </div>
+    <!-- Create an element where the map will take place -->
+    <div id="my_dataviz">
+        <svg id="my_dataviz" width="1000" height="1200"></svg>
+    </div>
+    <div style="position: absolute;top:850px; font-size:20px; margin-left:1%;">
+        <h3>Explanation</h3>
+        <span>In the above Choropleth Map depicted the total abundance of different type of trees in Trento city.
+            Intensity of green color grows proportionally to tree number.</span>
+        <span><strong>S.GIUSEPPE-S.CHIARA</strong> has largest amount of tree abundance, it's 3024.
+            <strong>SARDAGNA </strong>has the least amount of
+            trees, it's 38.</span>
+        <span></span>
+    </div>
+    <script>
+
+        // The svg
+        var svg = d3.select("svg"),
+            width = +svg.attr("width"),
+            height = +svg.attr("height");
+
+        // Map and projection
+        var path = d3.geoPath();
+        var projection = d3.geoMercator()
+            .scale(145800)                       // This is like the zoom
+            .center([11, 46])                // GPS of location to zoom on
+            .translate([width / 2, height / 2]);
+        // Data and color scale
+        var data = d3.map();
+        var colorScale = d3.scaleThreshold()
+            .domain([0, 20, 100, 1000, 3500])
+            .range(d3.schemeGreens[7]);
+
+        var tooltip = d3.select("body")
+            .append("div")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("visibility", "hidden")
+            .style("background-color", "white")
+            .style("box-shadow", "0px 3px 9px rgba(0, 0, 0, .15)")
+            .style("padding", "5px")
+        // Load external data and boot
+        d3.queue()
+            .defer(d3.json, "../data/grouped_for_map_data.json")
+            .defer(d3.csv, "../data/grouped_region_for_map_data_tree_abundance.csv", function (d) {
+                data.set(d.id, parseInt(d.count));
+            })
+            .await(ready);
+        function ready(error, topo) {
+            console.log(topo.features)
+            // Draw the map
+            svg.append("g")
+                .selectAll("path")
+                .data(topo.features)
+                .enter()
+                .append("path")
+                // draw each country
+                .attr("d", d3.geoPath()
+                    .projection(projection)
+                )
+                // set the color of each country
+                .attr("fill", function (d) {
+                    d.count = data.get(d.id) || 0;
+
+                    // console.log(colorScale(d.area));
+                    return colorScale(d.count);
+                })
+                .on("mouseover", function () { return tooltip.style("visibility", "visible"); })
+                .on("mousemove", function (d) {
+                    return tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px")
+                        .html((d.properties.nome) + "<br><span>" + "tree abundance: " + (d.count));
+                })
+                .on("mouseout", function () { return tooltip.style("visibility", "hidden"); });
+        }
+
+    </script>
+</body>
+
+</html>
