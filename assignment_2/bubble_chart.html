@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <title>Group Avatar: Bubble Chart with D3.js</title>
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
+    <h1>Bubble Chart of Tree Size and CO2</h1>
 
     <!-- Create a div where the graph will take place -->
     <div id="my_dataviz"></div>
+
 
 
     <script>
@@ -51,8 +53,7 @@
 
             svg.append("text")
                 .attr("text-anchor", "end")
-                .attr("font-family", "sans-serif")
-                .attr("font-size", 16)
+
                 .attr("x", chartWidth)
                 .attr("y", chartHeight + 50)
                 .text("Tree Size");
@@ -66,8 +67,7 @@
 
             svg.append("text")
                 .attr("text-anchor", "end")
-                .attr("font-family", "sans-serif")
-                .attr("font-size", 16)
+
                 .attr("x", 0)
                 .attr("y", -20)
                 .text("Carbon (Kg)")
