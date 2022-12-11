@@ -13,6 +13,15 @@
 </head>
 
 <body>
+
+    <h1>The Scatter Plot of Tree Size and CO2</h1>
+
+    <div>
+        <p>Select the value of Gross Carbon Sequestration in either</p>
+        <input type="radio" name="CO2" value="1" checked>Units in eur/yr<br>
+        <input type="radio" name="CO2" value="2">Units in kg/yr<br>
+        <p></p>
+    </div>
     <!-- Create a div where the graph will take place -->
     <div id="my_dataviz"></div>
 
@@ -33,11 +42,37 @@
                 `translate(${margin.left}, ${margin.top})`);
 
         //Read the data
-        d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/iris.csv").then(function (data) {
+        // d3.selectAll(("input[name='CO2']")).on("change", function () {
+        //     new_data = ;
+        //     redraw()
+        // });
+        var btn_radio_val = function (value) {
+            if (value == 1) {
+                return "Gross Carbon Sequestration (eur/yr)"
+            }
+            else {
+                return "Gross Carbon Sequestration (kg/yr)"
+            };
+        };
+        d3.csv("../data/merged_tree_and_region.csv").then(function (data) {
+            // console.log(treedata)
+            // var GroupbyTreeType = Array.from(d3.group(treedata, d => d.Name));
+            // });
 
+            redraw(data.filter(d => (d.Market == "A")))
+
+            //radio button
+            d3.selectAll(("input[name='CO2']")).on("change", function () {
+                var data_new = data.filter(d => (d.Market == this.value));
+                redraw(data_new);
+            });
+
+
+            // d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/iris.csv").then(function (data) {
+            var min_maxval = function (colname) { return d3.extent(data, d => +d[colname]); };
             // Add X axis
             const x = d3.scaleLinear()
-                .domain([4, 8])
+                .domain(min_maxval("DBH (cm)"))
                 .range([0, width]);
             svg.append("g")
                 .attr("transform", `translate(0, ${height})`)
@@ -45,7 +80,7 @@
 
             // Add Y axis
             const y = d3.scaleLinear()
-                .domain([0, 9])
+                .domain([0, min_maxval("DBH (cm)")[1]])
                 .range([height, 0]);
             svg.append("g")
                 .call(d3.axisLeft(y));
