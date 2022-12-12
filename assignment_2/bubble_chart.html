@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Avatar: Bubble Chart with D3.js</title>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <h1>Bubble Chart of Tree Size and CO2</h1>
+
+    <!-- Create a div where the graph will take place -->
+    <div id="my_dataviz"></div>
+
+
+
+    <script>
+
+        // set the dimensions and margins of the graph
+        const margin = { top: 80, right: 30, bottom: 30, left: 200 },
+            width = 1200 - margin.left - margin.right,
+            height = 800 - margin.top - margin.bottom;
+        chartWidth = 600;
+        chartHeight = 600;
+
+        // append the svg object to the body of the page
+        var svg = d3.select("#my_dataviz")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+        //Read the data
+        d3.csv("../data/bubble_chart_data.csv", function (data) {
+
+
+            var color = d3.scaleOrdinal()
+                .domain([0, d3.max(data, function (d) { return d.Canopy; })])
+                .range(["#4472c4", "#a5a5a5", "#ffc000", "#5b9bd5", "#ed7d31", "#70ad47"]);
+
+            const x = d3.scaleLinear()
+                .domain([0, 100])
+                .range([0, chartWidth]);
+            svg.append("g")
+                .attr("transform", "translate(0," + chartHeight + ")")
+                .call(d3.axisBottom(x));
+
+            svg.append("text")
+                .attr("text-anchor", "end")
+
+                .attr("x", chartWidth)
+                .attr("y", chartHeight + 50)
+                .text("Tree Size");
+
+            // Add Y axis
+            var y = d3.scaleLinear()
+                .domain([0, 5000])
+                .range([chartHeight, 0]);
+            svg.append("g")
+                .call(d3.axisLeft(y));
+
+            svg.append("text")
+                .attr("text-anchor", "end")
+
+                .attr("x", 0)
+                .attr("y", -20)
+                .text("Carbon (Kg)")
+                .attr("text-anchor", "start")
+
+            // Add a scale for bubble size
+            var z = d3.scaleLinear()
+                .domain([1, 100])
+                .range([1, 40]);
+
+            // Add dots
+            svg.append('g')
+                .selectAll("dot")
+                .data(data)
+                .enter()
+                .append("circle")
+                .attr("cx", function (d) { return x(d.Size); })
+                .attr("cy", function (d) { return y(d.Carbon); })
+                .attr("r", function (d) { return z(d.Canopy); })
+                .style("fill", function (d) { return color(d.Canopy); })
+                .style("opacity", "0.7")
+                .attr("stroke", "black")
+
+        })
+    </script>
+
+
+
+</body>
+
+</html>
