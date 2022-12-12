@@ -32,6 +32,11 @@
             width = 460 - margin.left - margin.right,
             height = 400 - margin.top - margin.bottom;
 
+        var tooltip = d3.select("#my_dataviz")
+            .append("div")
+            .attr("class", "toolTip")
+            .style("display", "none");
+
         // append the svg object to the body of the page
         const svg = d3.select("#my_dataviz")
             .append("svg")
@@ -41,38 +46,44 @@
             .attr("transform",
                 `translate(${margin.left}, ${margin.top})`);
 
-        //Read the data
-        // d3.selectAll(("input[name='CO2']")).on("change", function () {
-        //     new_data = ;
-        //     redraw()
-        // });
-        var btn_radio_val = function (value) {
-            if (value == 1) {
-                return "Gross Carbon Sequestration (eur/yr)"
-            }
-            else {
-                return "Gross Carbon Sequestration (kg/yr)"
-            };
-        };
-        d3.csv("../data/merged_tree_and_region.csv").then(function (data) {
+
+        d3.csv("../data/scatter_plot_data.csv").then(function (data) {
             // console.log(treedata)
-            // var GroupbyTreeType = Array.from(d3.group(treedata, d => d.Name));
+            var GroupbyTreeType = Array.from(d3.group(data, d => d.Name));
+            var TotalTreeTypes = GroupbyTreeType.map(d => d[0]);
             // });
 
-            redraw(data.filter(d => (d.Market == "A")))
+            // redraw(data.filter(d => (d.Market == "A")))
 
             //radio button
-            d3.selectAll(("input[name='CO2']")).on("change", function () {
-                var data_new = data.filter(d => (d.Market == this.value));
-                redraw(data_new);
-            });
+            // d3.selectAll(("input[name='CO2']")).on("change", function () {
+            //     var data_new = data.filter(d => (d.Market == this.value));
+            //     redraw(data_new);
+            // });
+            //Read the data
+            // d3.selectAll(("input[name='CO2']")).on("change", function () {
+            //     new_data = ;
+            //     redraw()
+            // });
+            // var btn_radio_val = function (value) {
+            //     if (value == 1) {
+            //         return "Gross Carbon Sequestration (eur/yr)"
+            //     }
+            //     else {
+            //         return "Gross Carbon Sequestration (kg/yr)"
+            //     };
+            // };
 
-
-            // d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/iris.csv").then(function (data) {
             var min_maxval = function (colname) { return d3.extent(data, d => +d[colname]); };
+            var x_axis_col_lst = ["DBH (cm)", "Height (m)", "Crown Height (m)", "Crown Width (m)", "Canopy Cover (m2)"]
+            var default_xaxis_col = x_axis_col_lst[0];
+            var y_axis_col_lst = ["Gross Carbon Sequestration (kg/yr)", "Gross Carbon Sequestration (eur/yr)"]
+            var default_yaxis_col = y_axis_col_lst[0];
+            var x_axis_col = default_xaxis_col;
+            var y_axis_col = default_yaxis_col;
             // Add X axis
             const x = d3.scaleLinear()
-                .domain(min_maxval("DBH (cm)"))
+                .domain([0, min_maxval(x_axis_col)[1]])
                 .range([0, width]);
             svg.append("g")
                 .attr("transform", `translate(0, ${height})`)
@@ -80,42 +91,57 @@
 
             // Add Y axis
             const y = d3.scaleLinear()
-                .domain([0, min_maxval("DBH (cm)")[1]])
+                .domain([0, min_maxval(y_axis_col)[1]])
                 .range([height, 0]);
             svg.append("g")
                 .call(d3.axisLeft(y));
 
-            // Color scale: give me a specie name, I return a color
+            // Color scale: takes treetype name and return a color
+            // var mycolors = ['#66976B', '#1D382B', '#D68C2C', '#A54A2B',
+            //     '#C7A98C', '#53070D', '#F4A6B3', '#B7264A', '#C5BE6A',
+            //     '#364277', '#8FBFCC', '#226D7B', '#002E6B'];
+
             const color = d3.scaleOrdinal()
-                .domain(["setosa", "versicolor", "virginica"])
-                .range(["#440154ff", "#21908dff", "#fde725ff"])
+                .domain(TotalTreeTypes)
+                .range(d3.schemeSet2);
+            // .range(mycolors);
+            // .range(d3["schemeCategory10"])
 
 
             // Highlight the specie that is hovered
             const highlight = function (event, d) {
 
-                selected_specie = d.Species
+                selected_tree_type = d.Name
 
                 d3.selectAll(".dot")
                     .transition()
                     .duration(200)
                     .style("fill", "lightgrey")
-                    .attr("r", 3)
+                    .attr("r", 2)
 
-                d3.selectAll("." + selected_specie)
+                d3.selectAll("." + selected_tree_type)
                     .transition()
                     .duration(200)
-                    .style("fill", color(selected_specie))
-                    .attr("r", 7)
+                    .style("fill", color(selected_tree_type))
+                    .attr("r", 4);
+
+                tooltip
+                    .style("left", event.pageX - 50 + "px")
+                    .style("top", event.pageY - 90 + "px")
+                    .style("display", "inline-block")
+                    .html(d.Name);
+
             }
 
-            // Highlight the specie that is hovered
+            // Highlight the treetype that is hovered
             const doNotHighlight = function (event, d) {
                 d3.selectAll(".dot")
                     .transition()
                     .duration(200)
-                    .style("fill", d => color(d.Species))
-                    .attr("r", 5)
+                    .style("fill", d => color(d.Name))
+                    .attr("r", 3);
+
+                tooltip.style("display", "none");
             }
 
             // Add dots
@@ -124,13 +150,33 @@
                 .data(data)
                 .enter()
                 .append("circle")
-                .attr("class", function (d) { return "dot " + d.Species })
-                .attr("cx", function (d) { return x(d.Sepal_Length); })
-                .attr("cy", function (d) { return y(d.Petal_Length); })
-                .attr("r", 5)
-                .style("fill", function (d) { return color(d.Species) })
+                .attr("class", function (d) { return "dot " + d["Name"] })
+                .attr("cx", function (d) { return x(+d[x_axis_col]); })
+                .attr("cy", function (d) { return y(+d[y_axis_col]); })
+                .attr("r", 3)
+                .style("fill", function (d) { return color(d["Name"]) })
                 .on("mouseover", highlight)
                 .on("mouseleave", doNotHighlight)
+
+            // Add a legend (interactive)
+            // svg
+            //     .selectAll("myLegend")
+            //     .data(TotalTreeTypes)
+            //     .enter()
+            //     .append('g')
+            //     .append("text")
+            //     .attr('x', width - 100)
+            //     .attr('y', function (d, i) { return 30 + i * 60 })
+            //     .text(function (d, i) { return d[i] })
+            //     .style("fill", function (d, i) { return color(d[i]) })
+            //     .style("font-size", 10)
+            //     .on("click", function (d, i) {
+            //         // is the element currently visible ?
+            //         currentOpacity = d3.selectAll("." + d[i]).style("opacity")
+            //         // Change the opacity: from 0 to 1 or from 1 to 0
+            //         d3.selectAll("." + d[i]).transition().style("opacity", currentOpacity == 1 ? 0 : 1)
+
+            //     })
 
         })
     </script>

@@ -12,28 +12,29 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-    <style type="text/css">
+    <link rel="stylesheet" href="../css/style.css">
 
-    </style>
 </head>
 
 <body>
     <div class="back-home"><a href="../assignment_three.html">Back</a></div>
     <div style="text-align: center;">
-        <h1>Choropleth Map 1</h1>
+        <h1>Choropleth Map 3</h1>
     </div>
     <!-- Create an element where the map will take place -->
     <div id="my_dataviz">
         <svg id="my_dataviz" width="1000" height="1200"></svg>
     </div>
-    <div style="position: absolute;top:850px; font-size:20px; margin-left:1%;">
+    <div class="container" style="position: absolute;top:850px; font-size:20px; margin-left:1%;">
         <h3>Explanation</h3>
-        <span>In the above Choropleth Map depicted the total abundance of different type of trees in Trento city.
-            Intensity of green color grows proportionally to tree number.</span>
-        <span><strong>S.GIUSEPPE-S.CHIARA</strong> has largest amount of tree abundance, it's 3024.
-            <strong>SARDAGNA </strong>has the least amount of
-            trees, it's 38.</span>
-        <span></span>
+        <p>The Choropleth Map above depicts the values of Oxygen
+            produced per neighborhood. The darkest blue colored region
+            <span class="bold-text">Centro Storico Piedicastello</span> has the highest
+            amount of oxygen production which is equal to <span class="bold-text">53818 Kg/Year</span>.
+            Whereas, in the <span class="bold-text">Sardagna</span>
+            neighborhood, only about <span class="bold-text">580 Kg/Year</span> was produced.
+        </p>
+
     </div>
     <script>
 
@@ -51,8 +52,8 @@
         // Data and color scale
         var data = d3.map();
         var colorScale = d3.scaleThreshold()
-            .domain([0, 20, 100, 1000, 3500])
-            .range(d3.schemeGreens[7]);
+            .domain([1000, 3000, 5000, 10000, 25000, 40000, 45000, 53000])
+            .range(d3.schemeBlues[8]);
 
         var tooltip = d3.select("body")
             .append("div")
@@ -65,8 +66,8 @@
         // Load external data and boot
         d3.queue()
             .defer(d3.json, "../data/grouped_for_map_data.json")
-            .defer(d3.csv, "../data/grouped_region_for_map_data_tree_abundance.csv", function (d) {
-                data.set(d.id, parseInt(d.count));
+            .defer(d3.csv, "../data/grouped_region_for_map_oxygen_production.csv", function (d) {
+                data.set(d.id, parseInt(d['Oxygen Production (kg/yr)']));
             })
             .await(ready);
         function ready(error, topo) {
@@ -91,7 +92,7 @@
                 .on("mouseover", function () { return tooltip.style("visibility", "visible"); })
                 .on("mousemove", function (d) {
                     return tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px")
-                        .html((d.properties.nome) + "<br><span>" + "tree abundance: " + (d.count));
+                        .html((d.properties.nome) + "<br><span>" + "Oxygen Produced (Kg/year): " + (d.count));
                 })
                 .on("mouseout", function () { return tooltip.style("visibility", "hidden"); });
         }
