@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+</head>
+
+<!-- Create a div where the graph will take place -->
+
+<body>
+    <div style="text-align: center;margin-bottom: 40px;">
+        <h1>Group Avatar: Line Chart(Salorno)</h1>
+    </div>
+    <div id="my_dataviz"></div>
+</body>
+
+<script>
+    const colors = [
+        { 'line': ['#78281F', '#FDEDEC'], 'dot': '#EC7063' },
+        { 'line': ['#4A235A', '#F4ECF7'], 'dot': '#8E44AD' },
+        { 'line': ['#78281F', '#EC7063'], 'dot': '#EC7063' },
+        { 'line': ['#0E6251', '#E8F8F5'], 'dot': '#1ABC9C' },
+        { 'line': ['#1B4F72', '#EBF5FB'], 'dot': '#3498DB' },
+        { 'line': ['#7D6608', '#FEF9E7'], 'dot': '#F1C40F' },
+        { 'line': ['#6E2C00', '#FBEEE6'], 'dot': '#D35400' },
+        { 'line': ['#7B7D7D', '#F2F4F4'], 'dot': '#BDC3C7' },
+        { 'line': ['#17202A', '#EAECEE'], 'dot': '#566573' }
+    ]
+    const years = ['2021', '2017', '2013', '2009', '2005', '2001', '1997', '1993']
+    // set the dimensions and margins of the graph
+
+    //Read the data
+    d3.csv("../data/data_linechart.csv", function (data) {
+        console.log(data);
+        var sumstats = d3.nest() // nest function allows to group the calculation per level of a factor
+            .key(function (d) {
+                if (d.year && years.includes(d.year)) {
+                    return d.year;
+                }
+            })
+            .entries(data);
+        for (var i = 1; i < sumstats.length; i++) {
+            var margin = { top: 10, right: 30, bottom: 30, left: 60 },
+                width = 560 - margin.left - margin.right,
+                height = 400 - margin.top - margin.bottom;
+
+            // append the svg object to the body of the page
+            var svg = d3.select("#my_dataviz")
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform",
+                    "translate(" + margin.left + "," + margin.top + ")");
+            var max_temp = []
+            var min_temp = []
+            var avg_temp = []
+            svg.append("text")
+                .attr("x", 200)
+                .attr("y", 8)
+                .attr("text-anchor", "middle")
+                .style("font-size", "16px")
+                .style("text-decoration", "underline")
+                .text("Temperature vs Month Graph " + sumstats[i]['key'] + " year");
+            sumstats[i].values.forEach(function (val) {
+                max_temp.push({ 'temp': val.max_temp, 'month': val.month });
+                min_temp.push({ 'temp': val.min_temp, 'month': val.month });
+                avg_temp.push({ 'temp': val.avg, 'month': val.month })
+            });
+            var max_obj = {
+                'key': 'max',
+                'values': max_temp
+            }
+            var min_obj = {
+                'key': 'min',
+                'values': min_temp
+            }
+            var avg_obj = {
+                'key': 'avg',
+                'values': avg_temp
+            }
+            var sumstat = [max_obj, min_obj, avg_obj]
+
+
+
+            // Add X axis --> it is a date format
+            var x = d3.scaleLinear()
+                .domain(d3.extent(data, function (d) { return d.month; }))
+                .range([0, width]);
+            svg.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x).ticks(5));
+
+            // Add Y axis
+            var y = d3.scaleLinear()
+                .domain([0, d3.max(data, function (d) { return +d.max_temp; })])
+                .range([height, 0]);
+            svg.append("g")
+                .call(d3.axisLeft(y));
+
+            // color palette
+            var res = sumstat.map(function (d) { return d.key }) // list of group names
+            var color = d3.scaleOrdinal()
+                .domain(res)
+                .range(colors[i]['line'])
+
+
+            // Draw the line
+            svg.selectAll(".line")
+                .data(sumstat)
+                .enter()
+                .append("path")
+                .attr("fill", "none")
+                .attr("stroke", function (d) { return color(d.key) })
+                .attr("stroke-width", 1.5)
+                .attr("d", function (d) {
+                    if (d.key !== 'avg')
+                        return d3.line()
+                            .x(function (d) { return x(d.month); })
+                            .y(function (d) { return y(+d.temp); })
+                            (d.values)
+                })
+            // Add dots
+            svg.append('g')
+                .selectAll("dot")
+                .data(sumstat[2].values)
+                .enter()
+                .append("circle")
+                .attr("cx", function (d) {
+                    return x(d.month);
+                })
+                .attr("cy", function (d) { return y(d.temp); })
+                .attr("r", 4)
+                .style("fill", colors[i]['dot'])
+            sumstat = []
+        }
+    })
+
+</script>
