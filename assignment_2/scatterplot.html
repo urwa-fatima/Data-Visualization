@@ -12,18 +12,22 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="container">
 
-    <h1>The Scatter Plot of Tree Size and CO2</h1>
+    <h1 class="graph_center">The Scatter Plot of Tree Size and CO2</h1>
 
     <div>
         <p>Select the value of Gross Carbon Sequestration in either</p>
-        <input type="radio" name="CO2" value="1" checked>Units in eur/yr<br>
-        <input type="radio" name="CO2" value="2">Units in kg/yr<br>
-        <p></p>
+        <input type="radio" name="CO2" value="1" checked>Units in kg/yr<br>
+        <input type="radio" name="CO2" value="2">Units in eur/yr<br>
+    </div>
+    <div>
+        <p>Select the option for the tree size on x axis</p>
+        <div id="tree_size_opt">
+        </div>
     </div>
     <!-- Create a div where the graph will take place -->
-    <div id="my_dataviz"></div>
+    <div class="graph_center" id="my_dataviz"></div>
 
     <script>
 
@@ -46,12 +50,14 @@
             .attr("transform",
                 `translate(${margin.left}, ${margin.top})`);
 
+        var dropdownButton = d3.select("#tree_size_opt")
+            .append('select')
+            .style("padding", "3px")
 
         d3.csv("../data/scatter_plot_data.csv").then(function (data) {
-            // console.log(treedata)
+
             var GroupbyTreeType = Array.from(d3.group(data, d => d.Name));
             var TotalTreeTypes = GroupbyTreeType.map(d => d[0]);
-            // });
 
             // redraw(data.filter(d => (d.Market == "A")))
 
@@ -81,6 +87,15 @@
             var default_yaxis_col = y_axis_col_lst[0];
             var x_axis_col = default_xaxis_col;
             var y_axis_col = default_yaxis_col;
+
+            // add the options to the button
+            dropdownButton // Add a button
+                .selectAll('myOptions') // Next 4 lines add 6 options = 6 colors
+                .data(x_axis_col_lst)
+                .enter()
+                .append('option')
+                .text(function (d) { return d; }) // text showed in the menu
+                .attr("value", function (d) { return d; }) // corresponding value returned by th
             // Add X axis
             const x = d3.scaleLinear()
                 .domain([0, min_maxval(x_axis_col)[1]])
