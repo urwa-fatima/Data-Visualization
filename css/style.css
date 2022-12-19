@@ -162,3 +162,37 @@ rect:hover {
 .bold-text {
   font-weight: 800;
 }
+
+#theRadios {
+  height: 100px;
+  position: relative;
+}
+
+#theRadios span {
+  position: absolute;
+}
+
+#theRadios span:first-child {
+  top: 10px;
+  left: 0;
+}
+
+#theRadios span:last-child {
+  top: 40px;
+  left: 0;
+}
+
+.graph_div {
+  margin-top: 25px;
+  /* background-color: rgb(0, 25, 6); */
+  /* color: beige; */
+  padding-top: 3%;
+  padding-left: 5%;
+
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
