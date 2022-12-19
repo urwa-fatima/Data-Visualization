@@ -39,8 +39,14 @@
                 '#C7A98C', '#53070D', '#F4A6B3', '#B7264A', '#C5BE6A',
                 '#364277', '#8FBFCC', '#226D7B', '#002E6B'];
 
-            for (var i = 2; i < 7; i++) {
-                if (i > 2) {
+            var column_name = data.columns.slice(1);
+
+            var color = d3.scaleOrdinal()
+                .domain(column_name)
+                .range(mycolors);
+
+            for (var i = 1; i < 7; i++) {
+                if (i > 1) {
                     margin = { top: 80, right: 30, bottom: 30, left: 80 },
                         width = 200 - margin.left - margin.right,
                         height = 650 - margin.top - margin.bottom;
@@ -63,10 +69,6 @@
 
                 var keys = [data.columns[i]];
                 console.log(keys);
-
-                var color = d3.scaleOrdinal()
-                    .domain(keys)
-                    .range(mycolors);
 
                 var stack = d3.stack()
                     .keys(keys)
@@ -100,7 +102,7 @@
                     .domain(data.map(d => d.Region))
                     .padding(.2);
 
-                if (i == 2) {
+                if (i == 1) {
                     svg.append("g")
                         .call(d3.axisLeft(y))
                 }
@@ -127,9 +129,6 @@
                         // .html((d.data.Region) + "<br>" + (d[1] - d[0]));
                     })
                     .on("mouseout", function (d) { tooltip.style("display", "none"); });
-
-
-
                 //Legend
                 var legend = svg.selectAll(".legend")
                     .data(keys.slice().reverse())
@@ -153,8 +152,11 @@
                     .style("text-anchor", "end")
                     .text(function (d) { return d; });
 
-
             }
+
+            // total svg
+
+
         })
 
 
