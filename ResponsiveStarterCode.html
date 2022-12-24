@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Starter Code</title>
+    <script src="https://unpkg.com/d3@7.8.0/dist/d3.min.js"></script>
+
+    <style>
+        body {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            margin: 0px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+
+        render();
+        window.addEventListener('resize', render);
+
+        function render() {
+            myResponsiveComponent(d3.select('body'), {
+                width: document.body.clientWidth,
+                height: document.body.clientHeight,
+                margin: { top: 20, bottom: 20, left: 20, right: 20 }
+            });
+
+        }
+
+        function myResponsiveComponent(selection, props) {
+
+            const { width, height, margin } = props;
+
+            let svg = selection.selectAll('svg').data([null]);
+
+            svg = svg.enter().append('svg')
+                .merge(svg)
+                .attr('width', width)
+                .attr('height', height);
+
+            const { g, innerwidth, innerheight } = marginConvention(svg, props);
+
+
+            let rect = g.selectAll('rect').data([null]);
+            rect = rect
+                .enter()
+                .append('rect')
+                .attr('rx', 50)
+                .merge(rect)
+                .attr('width', innerwidth)
+                .attr('height', innerheight);
+
+
+
+        }
+
+        function marginConvention(selection, props) {
+            const { width, height, margin } = props;
+            let g = selection.selectAll('g').data([null]);
+            g = g.enter().append('g')
+                .merge(g)
+                .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+            const innerwidth = width - margin.left - margin.right;
+            const innerheight = height - margin.top - margin.bottom;
+
+            return { g, innerwidth, innerheight }
+        }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
