@@ -76,18 +76,22 @@
                 var path = sankey.link();
 
                 // load the data
-                // d3.json("../data/sankey_carbon_storage_top10.json", function (error, graph) {
-                d3.json("../data/sankeygreenhouse.json", function (error, graph) {
+                d3.json("../data/sankey_carbon_storage_top10.json", function (error, graph) {
+                    // d3.json("../data/sankeygreenhouse.json", function (error, graph) {
 
                     var nodeMap = {};
-                    graph.nodes.forEach(function (x) { nodeMap[x.name] = x; });
-                    graph.links = graph.links.map(function (x) {
-                        return {
-                            source: nodeMap[x.source],
-                            target: nodeMap[x.target],
-                            value: x.value
-                        };
-                    });
+
+                    console.log(graph.links);
+                    console.log(graph.nodes);
+
+                    // graph.nodes.forEach(function (x) { nodeMap[x.name] = x; });
+                    // graph.links = graph.links.map(function (x) {
+                    //     return {
+                    //         source: nodeMap[x.source],
+                    //         target: nodeMap[x.target],
+                    //         value: x.value
+                    //     };
+                    // });
 
                     sankey
                         .nodes(graph.nodes)
