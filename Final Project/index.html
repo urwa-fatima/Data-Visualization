@@ -19,6 +19,10 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/style-custom.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- d3 library -->
+    <script src="https://d3js.org/d3.v6.js"></script>
 </head>
 
 <body id="page-top">
@@ -44,8 +48,8 @@
     <header style="background-image: url('images/world-map.png');" class="masthead text-center">
         <div class="masthead-content">
             <div class="container px-5">
-                <h1 class="masthead-heading mb-0">One Page Wonder</h1>
-                <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
+                <h1 class="masthead-heading mb-0">Asia and Covid-19</h1>
+                <h2 class="masthead-subheading mb-0">Visulaiztion of impact of Covid-19 in Asian Countries</h2>
                 <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
             </div>
         </div>
@@ -59,16 +63,21 @@
     <section id="scroll">
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                    <div id="world-asia-pie-chart" class="p-5"></div>
+                <div id="world-asia-pie-chart" class="col-lg-6 order-lg-2">
+                    <script src="js/pie-chart.js"></script>
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4">Deaths due to COVID-19 in the World</h2>
-                        <p>This pie chart shows total number of deaths occured due to Corona Virus in the world.
-                            World is divided in seven continets and total number of deaths contributed by each
-                            continent is described...
-                        </p>
+                        <h2 class="display-4">Asia to the World</h2>
+                        <p>In early geography lessons, we learn that
+                            world is divided into 7 continents.</p>
+                        <p>In order to understand the impact of Covid-19 around the
+                            world, we need to closely look at Asia. As it is the largest
+                            of the world's continents, covering approximately 30 percent
+                            of the Earth's land area. It is also the world's most populous
+                            continent, with roughly 60 percent of the total population</p>
+                        <p>This pie chart illustrates the contributions of total number of
+                            deaths occured due to Covid-19 by all the continents of the World.</p>
                     </div>
                 </div>
             </div>
@@ -79,7 +88,7 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6">
-                    <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/02.jpg" alt="..." /></div>
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="images/world-map.png" alt="..." /></div>
                 </div>
                 <div class="col-lg-6">
                     <div class="p-5">
@@ -97,7 +106,8 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/03.jpg" alt="..." /></div>
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="images/virus-colored.png" alt="..." />
+                    </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
