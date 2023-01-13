@@ -23,6 +23,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- d3 library -->
     <script src="https://d3js.org/d3.v6.js"></script>
+
+    <style>
+        .svg-container {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            vertical-align: middle;
+            overflow: hidden;
+        }
+
+        .svg-content {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -53,17 +71,14 @@
                 <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
             </div>
         </div>
-        <!-- <div class="bg-circle-1 bg-circle"></div> -->
-        <!-- <div class="bg-circle-2 bg-circle"></div>
-        <div class="bg-circle-3 bg-circle"></div>
-        <div class="bg-circle-4 bg-circle"></div> -->
     </header>
 
     <!-- Content section 1-->
     <section id="scroll">
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
-                <div id="world-asia-pie-chart" class="col-lg-6 order-lg-2">
+                <div class="col-lg-6 order-lg-2 p-5">
+                    <div id="world-asia-pie-chart" class="svg-container"></div>
                     <script src="js/pie-chart.js"></script>
                 </div>
                 <div class="col-lg-6 order-lg-1">
