@@ -23,9 +23,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- d3 library -->
     <script src="https://d3js.org/d3.v6.js"></script>
-    <style>
-
-    </style>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -35,18 +32,46 @@
     <div class="mb-5" id="top-header"></div>
 
     <!-- heading and svg -->
-    <div class="container px-5 py-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col">
-                <h2 class="display-4">COVID-19 Cases in Asian Countries</h2>
-                <p>The chart displays all the Asian countries whose data was available. </p>
+    <section>
+        <div class="container px-5 py-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col">
+                    <h2 class="display-4">COVID-19 Cases in Asian Countries</h2>
+                    <p>The chart displays all the Asian countries whose data was available.
+                        Line chart for COVID-19 progress in all the Asian countries.
+                        By default top 5 countries with the most cases
+                        would be highlighted and the rest would be greyed.
+                        User would be able to select all the countries
+                        and will have mouse interactivity to see the specific country
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div id="container" class="svg-container svg-container-line-chart"></div>
             </div>
         </div>
-        <div class="row align-items-center">
-            <div id="container" class="svg-container"></div>
-        </div>
+    </section>
 
-    </div>
+    <section>
+        <div class="container px-5 py-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col">
+                    <h2 class="display-4">COVID-19 Cases in Asian Countries</h2>
+                    <p>The chart displays all the Asian countries whose data was
+                        available.
+                        Line chart for correlation between new cases and vaccinated
+                        people for all the Asian countries but by default
+                        we will highlight 5 countries with lowest gdp.
+                        Users would have the option to select all the
+                        countries as well and be able to have hovering interactivity.
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div id="container2" class="svg-container svg-container-line-chart"></div>
+            </div>
+        </div>
+    </section>
 
     <div class="mt-auto" id="down-footer"></div>
     <script src="../js/scripts.js"></script>
