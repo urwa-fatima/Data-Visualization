@@ -1,4 +1,12 @@
-#scroll {
+.link-decoration-none,
+.link-decoration-none:hover {
+    text-decoration: none;
+    color: var(--bs-body-color);
+
+}
+
+
+.odd-section {
     background-color: #CCCCCC;
 }
 

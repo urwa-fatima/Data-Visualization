@@ -2,7 +2,7 @@
 // window.addEventListener('resize', render);
 
 function render() {
-    div_id = "line-chart-1";
+    div_id = "line-chart";
     const divID = d3.select('#' + div_id);
     line_chart(divID, Object.assign({}, {
         width: divID.node().getBoundingClientRect().width,
