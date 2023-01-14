@@ -24,77 +24,11 @@
     <!-- d3 library -->
     <script src="https://d3js.org/d3.v6.js"></script>
     <style>
-        /* AXES */
-        /* ticks */
-        .axis line {
-            stroke: #706f6f;
-            stroke-width: 0.5;
-            shape-rendering: crispEdges;
-        }
 
-        /* axis contour */
-        .axis path {
-            stroke: #706f6f;
-            stroke-width: 0.7;
-            shape-rendering: crispEdges;
-        }
-
-        /* axis text */
-        .axis text {
-            fill: #2b2929;
-            font-family: Georgia;
-            font-size: 120%;
-        }
-
-        /* LINE CHART */
-        path.line-0 {
-            fill: none;
-            stroke: #ed3700;
-        }
-
-        path.line-1 {
-            fill: none;
-            stroke: #2b2929;
-            stroke-dasharray: 2;
-        }
-
-        path.line-2 {
-            fill: none;
-            stroke: #9c9c9c;
-            stroke-dasharray: 6;
-        }
-
-        .serie_label {
-            fill: #2b2929;
-            font-family: Georgia;
-            font-size: 80%;
-        }
     </style>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-
-    <!-- <div class="mb-auto" id="top-header"></div>
-    <div class="container px-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 order-lg-2">
-                <div id="tooltip" class="hidden">
-                    <p><strong>Description</strong></p>
-                    <p><span id="value">description</span></p>
-                </div>
-                 <div id="line-chart-1" class="p-5"></div>
-                <div id="container" class="svg-container"></div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="p-5">
-                    <h2 class="display-4">We salute you!</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam
-                        sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione
-                        voluptatum molestiae adipisci, beatae obcaecati.</p>
-                </div>
-            </div>
-        </div> 
-    </div>-->
 
     <!-- Header -->
 
@@ -104,13 +38,11 @@
     <div class="container px-5 py-5">
         <div class="row gx-5 align-items-center">
             <div class="col">
-                <h2 class="display-4">We salute you!</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam
-                    sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione
-                    voluptatum molestiae adipisci, beatae obcaecati.</p>
+                <h2 class="display-4">COVID-19 Cases in Asian Countries</h2>
+                <p>The chart displays all the Asian countries whose data was available. </p>
             </div>
         </div>
-        <div class="row gx-5 align-items-center">
+        <div class="row align-items-center">
             <div id="container" class="svg-container"></div>
         </div>
 
@@ -120,8 +52,8 @@
     <script src="../js/scripts.js"></script>
     <script src="../js/line-chart.js"></script>
     <script>
-        const width = 960;
-        const height = 500;
+        const width = 700;
+        const height = 350;
         const margin = 5;
         const padding = 5;
         const adj = 30;
@@ -202,7 +134,10 @@
             }
 
             //---------------------------TOOLTIP----------------------------//
-
+            const tooltip = d3.select("body").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0)
+                .style("position", "absolute");
 
             //-------------------------2. DRAWING---------------------------//
             //-----------------------------AXES-----------------------------//
@@ -228,7 +163,7 @@
                 .append("g");
 
             lines.append("path")
-                .attr("class", ids)
+                .attr("class", "line")
                 .attr("d", function (d) { return line(d.values); });
 
             lines.append("text")
@@ -246,9 +181,107 @@
                 .attr("x", 5)
                 .text(function (d) { return ("Serie ") + d.id; });
 
-            //---------------------------POINTS-----------------------------// 
+            const ghost_lines = lines.append("path")
+                .attr("class", "ghost-line")
+                .attr("d", function (d) { return line(d.values); });
 
+            //---------------------------POINTS-----------------------------// 
+            lines.selectAll("points")
+                .data(function (d) { return d.values })
+                .enter()
+                .append("circle")
+                .attr("cx", function (d) { return xScale(d.date); })
+                .attr("cy", function (d) { return yScale(d.measurement); })
+                .attr("r", 1)
+                .attr("class", "point")
+                .style("opacity", 1);
             //---------------------------EVENTS-----------------------------// 
+
+            lines.selectAll("circles")
+                .data(function (d) { return (d.values); })
+                .enter()
+                .append("circle")
+                .attr("cx", function (d) { return xScale(d.date); })
+                .attr("cy", function (d) { return yScale(d.measurement); })
+                .attr('r', 10)
+                .style("opacity", 0)
+                .on('mouseover', function (event, d) {
+                    tooltip.transition()
+                        .delay(30)
+                        .duration(200)
+                        .style("opacity", 1);
+
+                    tooltip.html(d.measurement)
+                        .style("left", (event.pageX + 25) + "px")
+                        .style("top", (event.pageY) + "px")
+
+                    const selection = d3.select(this).raise();
+
+                    selection
+                        .transition()
+                        .delay("20")
+                        .duration("200")
+                        .attr("r", 6)
+                        .style("opacity", 1)
+                        .style("fill", "#ed3700");
+                })
+
+                .on("mouseout", function (d) {
+                    tooltip.transition()
+                        .duration(100)
+                        .style("opacity", 0);
+
+                    const selection = d3.select(this);
+
+                    selection
+                        .transition()
+                        .delay("20")
+                        .duration("200")
+                        .attr("r", 10)
+                        .style("opacity", 0);
+                });
+
+            svg.selectAll(".ghost-line")
+                .on('mouseover', function () {
+                    const selection = d3.select(this).raise();
+                    selection
+                        .transition()
+                        .delay("100")
+                        .duration("10")
+                        .style("stroke", "#ed3700")
+                        .style("opacity", "1")
+                        .style("stroke-width", "3");
+
+                    const legend = d3.select(this.parentNode)
+                        .select(".serie_label");
+
+                    legend
+                        .transition()
+                        .delay("100")
+                        .duration("10")
+                        .style("fill", "#2b2929");
+
+
+
+                })
+                .on('mouseout', function () {
+                    const selection = d3.select(this)
+                    selection
+                        .transition()
+                        .delay("100")
+                        .duration("10")
+                        .style("stroke", "#d2d2d2")
+                        .style("opacity", "0")
+                        .style("stroke-width", "10");
+
+                    const legend = d3.select(this.parentNode)
+                        .select(".serie_label");
+                    legend
+                        .transition()
+                        .delay("100")
+                        .duration("10")
+                        .style("fill", "#d2d2d2");
+                });
 
         });
 
