@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Covid-19 Data Visualization for Asia</title>
-    <link rel="icon" type="image/png" sizes="64x64" href="/images/favicon3.ico">
+    <title>Line chart for Asian Countries</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="../images/favicon3.ico">
 
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -25,15 +25,15 @@
     <script src="https://d3js.org/d3.v6.js"></script>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-    <div id="top-header"></div>
+    <div class="mb-auto" id="top-header"></div>
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
-            <div class="col-lg-6">
+            <div class="col-lg-6 order-lg-2">
                 <div id="line-chart-1" class="p-5"></div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 order-lg-1">
                 <div class="p-5">
                     <h2 class="display-4">We salute you!</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam
@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <div id="down-footer"></div>
+    <div class="mt-auto" id="down-footer"></div>
     <script src="../js/scripts.js"></script>
     <script src="../js/line-chart.js"></script>
 

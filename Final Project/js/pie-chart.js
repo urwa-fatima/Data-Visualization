@@ -40,7 +40,7 @@ function pie_chart(selection, props) {
 
 
     //CSV Data
-    // d3.csv("../../data_clean/monthly_data.csv").then(function (data) {
+    // d3.csv("../../data/data.csv").then(function (data) {
 
     // if data is a list of object like 
     // data = [{"name":"a", "value":1},{"name":"b", "value":2},{"name":"c", "value":3}];
