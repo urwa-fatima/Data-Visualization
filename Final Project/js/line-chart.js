@@ -1,5 +1,5 @@
-render();
-window.addEventListener('resize', render);
+// render();
+// window.addEventListener('resize', render);
 
 function render() {
     div_id = "line-chart-1";
@@ -64,3 +64,4 @@ function line_chart(selection, props) {
 
 
 }
+
