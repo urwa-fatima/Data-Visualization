@@ -6,7 +6,7 @@ function render() {
     pie_chart(divID, Object.assign({}, {
         width: divID.node().getBoundingClientRect().width,
         height: divID.node().getBoundingClientRect().height,
-        margin: { top: 30, bottom: 30, left: 30, right: 30 }
+        margin: { top: 40, bottom: 40, left: 40, right: 40 }
     }));
 
 }

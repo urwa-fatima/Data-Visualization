@@ -18,6 +18,16 @@
     overflow: hidden;
 }
 
+.center-align-div {
+
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
 .svg-container-line-chart {
     padding-bottom: 55% !important;
 }
