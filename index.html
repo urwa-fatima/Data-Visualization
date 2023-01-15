@@ -140,10 +140,19 @@
 
     <!-- Footer-->
     <div class="mt-auto" id="down-footer"></div>
+
     <!-- Bootstrap core JS
     <script src="js/bootstrap.bundle.min.js"></script> -->
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script>
+        $(function () {
+            $("#top-header").load("elements/navbar.html");
+        });
+
+        $(function () {
+            $("#down-footer").load("elements/footer.html");
+        });
+    </script>
 
 </body>
 
