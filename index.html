@@ -28,7 +28,25 @@
 
 <body class="d-flex flex-column min-vh-100" id="page-top">
     <!-- Navigation-->
-    <div id="top-header"></div>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top ">
+        <div class="container px-5  flex-sm-nowrap">
+
+            <a class="navbar-brand" href="index.html">
+                <img width="8%" src="images/favicon3.ico" alt=""> <span>Covid-19</span> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="cases.html" target="_blank">Cases</a></li>
+                    <li class="nav-item"><a class="nav-link" href="deaths.html" target="_blank">Deaths</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vaccinations.html" target="_blank">Vaccinations</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Header-->
     <header style="background-image: url('images/world-map.png');" class="masthead text-center">
@@ -137,22 +155,16 @@
         </div>
     </section>
 
-
     <!-- Footer-->
-    <div class="mt-auto" id="down-footer"></div>
+    <footer class="py-5 footer-custom">
+        <div class="container px-5">
+            <p class="m-0 text-center text-white small">Copyright &copy; urwa-fatima.github.io/DV/ 2022</p>
+        </div>
+    </footer>
 
     <!-- Bootstrap core JS -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script>
-        $(function () {
-            $("#top-header").load("elements/navbar.html");
-        });
-
-        $(function () {
-            $("#down-footer").load("elements/footer.html");
-        });
-    </script>
 
 </body>
 
