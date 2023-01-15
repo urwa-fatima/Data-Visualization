@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Deaths Reported due to Covid-19 in Asian Countries</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="../images/favicon3.ico">
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+        rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/style-custom.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- d3 library -->
+    <script src="https://d3js.org/d3.v6.js"></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Header -->
+
+    <div class="mb-5" id="top-header"></div>
+
+    <!-- heading and svg -->
+    <section>
+        <div class="container px-5 py-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col">
+                    <h2 class="display-4">Deaths Reported Due to COVID-19 in Asian Countries</h2>
+                    <p>The chart displays all the Asian countries whose data was available.
+                        Line chart for COVID-19 progress in all the Asian countries.
+                        By default top 5 countries with the most cases
+                        would be highlighted and the rest would be greyed.
+                        User would be able to select all the countries
+                        and will have mouse interactivity to see the specific country
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div id="container" class="svg-container svg-container-line-chart"></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container px-5 py-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col">
+                    <h2 class="display-4">Deaths Reported Due to COVID-19 in Asian Countries</h2>
+                    <p>The chart displays all the Asian countries whose data was
+                        available.
+                        Line chart for correlation between new cases and vaccinated
+                        people for all the Asian countries but by default
+                        we will highlight 5 countries with lowest gdp.
+                        Users would have the option to select all the
+                        countries as well and be able to have hovering interactivity.
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div id="container2" class="svg-container svg-container-line-chart"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="mt-auto" id="down-footer"></div>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/line-chart.js"></script>
+    <script>
+        const width = 700;
+        const height = 350;
+        const margin = 5;
+        const padding = 5;
+        const adj = 30;
+
+        // we are appending SVG first
+        const svg = d3.select("div#container").append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "-"
+                + adj + " -"
+                + adj + " "
+                + (width + adj * 3) + " "
+                + (height + adj * 3))
+            .style("padding", padding)
+            .style("margin", margin)
+            .classed("svg-content", true);
+
+        //-----------------------------DATA-----------------------------//
+        const timeConv = d3.timeParse("%d-%b-%Y");
+        const dataset = d3.csv("data.csv");
+        dataset.then(function (data) {
+            var slices = data.columns.slice(1).map(function (id) {
+                return {
+                    id: id,
+                    values: data.map(function (d) {
+                        return {
+                            date: timeConv(d.date),
+                            measurement: +d[id]
+                        };
+                    })
+                };
+            });
+
+            console.log("Column headers", data.columns);
+            console.log("Column headers without date", data.columns.slice(1));
+            // returns the sliced dataset
+            console.log("Slices", slices);
+            // returns the first slice
+            console.log("First slice", slices[0]);
+            // returns the array in the first slice
+            console.log("A array", slices[0].values);
+            // returns the date of the first row in the first slice
+            console.log("Date element", slices[0].values[0].date);
+            // returns the array's length
+            console.log("Array length", (slices[0].values).length);
+            //----------------------------SCALES----------------------------//
+            const xScale = d3.scaleTime().range([0, width]);
+            const yScale = d3.scaleLinear().rangeRound([height, 0]);
+
+            xScale.domain(d3.extent(data, function (d) {
+                return timeConv(d.date)
+            }));
+
+            yScale.domain([(0), d3.max(slices, function (c) {
+                return d3.max(c.values, function (d) {
+                    return d.measurement + 4;
+                });
+            })
+            ]);
+
+            //-----------------------------AXES-----------------------------//
+            const yaxis = d3.axisLeft()
+                .ticks((slices[0].values).length)
+                .scale(yScale);
+
+            const xaxis = d3.axisBottom()
+                .ticks(d3.timeDay.every(1))
+                .tickFormat(d3.timeFormat('%b %d'))
+                .scale(xScale);
+
+            //----------------------------LINES-----------------------------//
+            const line = d3.line()
+                .x(function (d) { return xScale(d.date); })
+                .y(function (d) { return yScale(d.measurement); });
+
+            let id = 0;
+            const ids = function () {
+                return "line-" + id++;
+            }
+
+            //---------------------------TOOLTIP----------------------------//
+            const tooltip = d3.select("body").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0)
+                .style("position", "absolute");
+
+            //-------------------------2. DRAWING---------------------------//
+            //-----------------------------AXES-----------------------------//
+            svg.append("g")
+                .attr("class", "axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xaxis);
+
+            svg.append("g")
+                .attr("class", "axis")
+                .call(yaxis)
+                .append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("dy", ".75em")
+                .attr("y", 6)
+                .style("text-anchor", "end")
+                .text("Frequency");
+
+            //----------------------------LINES-----------------------------//
+            const lines = svg.selectAll("lines")
+                .data(slices)
+                .enter()
+                .append("g");
+
+            lines.append("path")
+                .attr("class", "line")
+                .attr("d", function (d) { return line(d.values); });
+
+            lines.append("text")
+                .attr("class", "serie_label")
+                .datum(function (d) {
+                    return {
+                        id: d.id,
+                        value: d.values[d.values.length - 1]
+                    };
+                })
+                .attr("transform", function (d) {
+                    return "translate(" + (xScale(d.value.date) + 10)
+                        + "," + (yScale(d.value.measurement) + 5) + ")";
+                })
+                .attr("x", 5)
+                .text(function (d) { return ("Serie ") + d.id; });
+
+            const ghost_lines = lines.append("path")
+                .attr("class", "ghost-line")
+                .attr("d", function (d) { return line(d.values); });
+
+            //---------------------------POINTS-----------------------------// 
+            lines.selectAll("points")
+                .data(function (d) { return d.values })
+                .enter()
+                .append("circle")
+                .attr("cx", function (d) { return xScale(d.date); })
+                .attr("cy", function (d) { return yScale(d.measurement); })
+                .attr("r", 1)
+                .attr("class", "point")
+                .style("opacity", 1);
+            //---------------------------EVENTS-----------------------------// 
+
+            lines.selectAll("circles")
+                .data(function (d) { return (d.values); })
+                .enter()
+                .append("circle")
+                .attr("cx", function (d) { return xScale(d.date); })
+                .attr("cy", function (d) { return yScale(d.measurement); })
+                .attr('r', 10)
+                .style("opacity", 0)
+                .on('mouseover', function (event, d) {
+                    tooltip.transition()
+                        .delay(30)
+                        .duration(200)
+                        .style("opacity", 1);
+
+                    tooltip.html(d.measurement)
+                        .style("left", (event.pageX + 25) + "px")
+                        .style("top", (event.pageY) + "px")
+
+                    const selection = d3.select(this).raise();
+
+                    selection
+                        .transition()
+                        .delay("20")
+                        .duration("200")
+                        .attr("r", 6)
+                        .style("opacity", 1)
+                        .style("fill", "#ed3700");
+                })
+
+                .on("mouseout", function (d) {
+                    tooltip.transition()
+                        .duration(100)
+                        .style("opacity", 0);
+
+                    const selection = d3.select(this);
+
+                    selection
+                        .transition()
+                        .delay("20")
+                        .duration("200")
+                        .attr("r", 10)
+                        .style("opacity", 0);
+                });
+
+            svg.selectAll(".ghost-line")
+                .on('mouseover', function () {
+                    const selection = d3.select(this).raise();
+                    selection
+                        .transition()
+                        .delay("100")
+                        .duration("10")
+                        .style("stroke", "#ed3700")
+                        .style("opacity", "1")
+                        .style("stroke-width", "3");
+
+                    const legend = d3.select(this.parentNode)
+                        .select(".serie_label");
+
+                    legend
+                        .transition()
+                        .delay("100")
+                        .duration("10")
+                        .style("fill", "#2b2929");
+
+
+
+                })
+                .on('mouseout', function () {
+                    const selection = d3.select(this)
+                    selection
+                        .transition()
+                        .delay("100")
+                        .duration("10")
+                        .style("stroke", "#d2d2d2")
+                        .style("opacity", "0")
+                        .style("stroke-width", "10");
+
+                    const legend = d3.select(this.parentNode)
+                        .select(".serie_label");
+                    legend
+                        .transition()
+                        .delay("100")
+                        .duration("10")
+                        .style("fill", "#d2d2d2");
+                });
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
