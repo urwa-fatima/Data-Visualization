@@ -40,69 +40,84 @@ function pie_chart(selection, props) {
 
 
     //CSV Data
-    // d3.csv("../../data/data.csv").then(function (data) {
+    d3.csv("../data/world_total_death_pie_data.csv").then(function (data) {
 
-    // if data is a list of object like 
-    // data = [{"name":"a", "value":1},{"name":"b", "value":2},{"name":"c", "value":3}];
-    // then we create pir generator to be 
-    // const data_ready = d3.pie().value(d => d.value)(data);
-    // I need to test the data brackets part if it works or not (https://youtu.be/10dl-gDJLks?t=196)
-    // Create dummy data
-    const data = { "a": 9, "b": 20, "c": 30, "d": 8, "e": 12, "f": 4, h: 10 }
+        console.log(data);
 
-    //color 
-    var colorList = ["#FF1D33", "#26265C", "#32327A", "#5454CC",
-        "#6969FF", "#8E8EFF", "#B4B4FF"];
+        //color 
+        // var colorList = ["#26265C", "#32327A", "#5454CC",
+        //     "#6969FF", "#8E8EFF", "#B4B4FF"];
 
-    const color = d3.scaleOrdinal()
-        .range(colorList);
+        var mycolors = ["#26265C", '#1D382B', '#D68C2C', '#1F1F1F',
+            '#53070D', '#B7264A', '#66976B', '#A54A2B',
+            '#C7A98C', '#F4A6B3', '#C5BE6A',
+            '#364277', '#8FBFCC', '#226D7B', '#002E6B'];
 
-    // Compute the position of each group on the pie:
-    const pie = d3.pie()
-        .value(function (d) { return d[1] })
-        .sortValues((a, b) => a < b ? 1 : -1);
 
-    const data_ready = pie(Object.entries(data))
-    // Now I know that group A goes from 0 degrees to x degrees and so on.
+        const color = d3.scaleOrdinal()
+            .range(mycolors);
 
-    // shape helper to build arcs:
-    const arcGenerator = d3.arc()
-        .innerRadius(0)
-        .outerRadius(radius)
+        var colorScale = d3.scaleThreshold()
+            .domain([0, 2, 19, 22, 23, 25])
+            .range(mycolors);
 
-    // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+        // Compute the position of each group on the pie:
+        const pie = d3.pie()
+            .sort(null);
 
-    // var paths = svg.selectAll('mySlices').data([null]);
-    // paths = paths
-    //     .enter()
+        const data_ready = pie.value(d => d.percentage)(data)
+            .sort(function (a, b) { return d3.descending(a.value, b.value); });
+        // Now I know that group A goes from 0 degrees to x degrees and so on.
 
-    // g.selectAll("path").remove();
-    // g.selectAll("text").remove();
+        // shape helper to build arcs:
+        const arcGenerator = d3.arc()
+            .innerRadius(0)
+            .outerRadius(radius)
 
-    // let paths = g.selectAll('mySlices').data([null]);
+        var formatDecimal = d3.format(",.2f");
 
-    // paths = paths
-    g.selectAll('mySlices')
-        .data(data_ready)
-        .join('path')
-        .attr('d', arcGenerator)
-        .attr('fill', function (d) { return (color(d.data[0])) })
-        .attr("stroke", "#E0E0E0")
-        .style("stroke-width", "1px")
-        .style("opacity", 1);
+        // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
 
-    // Now add the annotation. Use the centroid method to get the best coordinates
-    g.selectAll('mySlices')
-        .data(data_ready)
-        .join('text')
-        .text(function (d) { return "grp " + d.data[0] })
-        .attr("transform", function (d) { return `translate(${arcGenerator.centroid(d)})` })
-        .style("text-anchor", "middle")
-        .style("fill", "#E0E0E0")
-        .style("font-size", "1.25em")
+        // var paths = svg.selectAll('mySlices').data([null]);
+        // paths = paths
+        //     .enter()
 
-    // close of Data function from csv
-    // });
+        // g.selectAll("path").remove();
+        // g.selectAll("text").remove();
+
+        // let paths = g.selectAll('mySlices').data([null]);
+
+        // paths = paths
+        g.selectAll('mySlices')
+            .data(data_ready)
+            .join('path')
+            .attr('d', arcGenerator)
+            .attr('fill', function (d) {
+                if (d.data.continent == "Asia") {
+                    return ("#FF1D33")
+
+                } else {
+                    return (color(d.value))
+                    // return (colorScale(d.value))
+
+                }
+            })
+            .attr("stroke", "#E0E0E0")
+            .style("stroke-width", "1px")
+            .style("opacity", 1);
+
+        // Now add the annotation. Use the centroid method to get the best coordinates
+        g.selectAll('mySlices')
+            .data(data_ready)
+            .join('text')
+            .text(function (d) { return d.data.continent + " " + formatDecimal(d.value) + "%" })
+            .attr("transform", function (d) { return `translate(${arcGenerator.centroid(d)})` })
+            .style("text-anchor", "middle")
+            .style("fill", "#E0E0E0")
+            .style("font-size", "1em")
+
+        // close of Data function from csv
+    });
 
 
 }
