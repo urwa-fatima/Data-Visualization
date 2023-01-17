@@ -34,6 +34,7 @@ function pie_chart(selection, props) {
         .enter()
         .append('g')
         .merge(g)
+        .attr("class", "arc")
         .attr('width', width)
         .attr('height', height)
         .attr("transform", "translate(" + Math.min(width, height) / 2 + "," + Math.min(width, height) / 2 + ")");
