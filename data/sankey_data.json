@@ -1,0 +1,700 @@
+{
+    "nodes": [
+        {
+            "node": 0,
+            "name": "new_cases_per_million"
+        },
+        {
+            "node": 1,
+            "name": "new_deaths_per_million"
+        },
+        {
+            "node": 2,
+            "name": "Brunei"
+        },
+        {
+            "node": 3,
+            "name": "South Korea"
+        },
+        {
+            "node": 4,
+            "name": "Israel"
+        },
+        {
+            "node": 5,
+            "name": "Georgia"
+        },
+        {
+            "node": 6,
+            "name": "Bahrain"
+        },
+        {
+            "node": 7,
+            "name": "Singapore"
+        },
+        {
+            "node": 8,
+            "name": "Taiwan"
+        },
+        {
+            "node": 9,
+            "name": "Hong Kong"
+        },
+        {
+            "node": 10,
+            "name": "Maldives"
+        },
+        {
+            "node": 11,
+            "name": "Mongolia"
+        },
+        {
+            "node": 12,
+            "name": "Japan"
+        },
+        {
+            "node": 13,
+            "name": "Lebanon"
+        },
+        {
+            "node": 14,
+            "name": "Turkey"
+        },
+        {
+            "node": 15,
+            "name": "Qatar"
+        },
+        {
+            "node": 16,
+            "name": "Armenia"
+        },
+        {
+            "node": 17,
+            "name": "Kuwait"
+        },
+        {
+            "node": 18,
+            "name": "Jordan"
+        },
+        {
+            "node": 19,
+            "name": "Malaysia"
+        },
+        {
+            "node": 20,
+            "name": "Palestine"
+        },
+        {
+            "node": 21,
+            "name": "Vietnam"
+        },
+        {
+            "node": 22,
+            "name": "United Arab Emirates"
+        },
+        {
+            "node": 23,
+            "name": "Oman"
+        },
+        {
+            "node": 24,
+            "name": "Iran"
+        },
+        {
+            "node": 25,
+            "name": "Bhutan"
+        },
+        {
+            "node": 26,
+            "name": "Azerbaijan"
+        },
+        {
+            "node": 27,
+            "name": "Kazakhstan"
+        },
+        {
+            "node": 28,
+            "name": "Thailand"
+        },
+        {
+            "node": 29,
+            "name": "Iraq"
+        },
+        {
+            "node": 30,
+            "name": "Philippines"
+        },
+        {
+            "node": 31,
+            "name": "Nepal"
+        },
+        {
+            "node": 32,
+            "name": "India"
+        },
+        {
+            "node": 33,
+            "name": "Kyrgyzstan"
+        },
+        {
+            "node": 34,
+            "name": "Sri Lanka"
+        },
+        {
+            "node": 35,
+            "name": "Laos"
+        },
+        {
+            "node": 36,
+            "name": "Indonesia"
+        },
+        {
+            "node": 37,
+            "name": "Saudi Arabia"
+        },
+        {
+            "node": 38,
+            "name": "Timor"
+        },
+        {
+            "node": 39,
+            "name": "Bangladesh"
+        },
+        {
+            "node": 40,
+            "name": "Myanmar"
+        },
+        {
+            "node": 41,
+            "name": "Cambodia"
+        },
+        {
+            "node": 42,
+            "name": "Uzbekistan"
+        },
+        {
+            "node": 43,
+            "name": "Pakistan"
+        },
+        {
+            "node": 44,
+            "name": "Macao"
+        },
+        {
+            "node": 45,
+            "name": "Afghanistan"
+        },
+        {
+            "node": 46,
+            "name": "Syria"
+        },
+        {
+            "node": 47,
+            "name": "Tajikistan"
+        },
+        {
+            "node": 48,
+            "name": "China"
+        },
+        {
+            "node": 49,
+            "name": "Yemen"
+        },
+        {
+            "node": 50,
+            "name": "North Korea"
+        }
+    ],
+    "links": [
+        {
+            "source": 0,
+            "target": 2,
+            "value": 607266.756
+        },
+        {
+            "source": 0,
+            "target": 3,
+            "value": 574618.453
+        },
+        {
+            "source": 0,
+            "target": 4,
+            "value": 505501.637
+        },
+        {
+            "source": 0,
+            "target": 5,
+            "value": 483661.532
+        },
+        {
+            "source": 0,
+            "target": 6,
+            "value": 475108.98
+        },
+        {
+            "source": 0,
+            "target": 7,
+            "value": 392251.645
+        },
+        {
+            "source": 0,
+            "target": 8,
+            "value": 383696.546
+        },
+        {
+            "source": 0,
+            "target": 9,
+            "value": 376256.249
+        },
+        {
+            "source": 0,
+            "target": 10,
+            "value": 354529.786
+        },
+        {
+            "source": 0,
+            "target": 11,
+            "value": 296976.807
+        },
+        {
+            "source": 0,
+            "target": 12,
+            "value": 251698.195
+        },
+        {
+            "source": 0,
+            "target": 13,
+            "value": 223151.937
+        },
+        {
+            "source": 0,
+            "target": 14,
+            "value": 190054.605
+        },
+        {
+            "source": 0,
+            "target": 15,
+            "value": 182246.058
+        },
+        {
+            "source": 0,
+            "target": 16,
+            "value": 160395.793
+        },
+        {
+            "source": 0,
+            "target": 17,
+            "value": 155250.571
+        },
+        {
+            "source": 0,
+            "target": 18,
+            "value": 154804.745
+        },
+        {
+            "source": 0,
+            "target": 19,
+            "value": 148276.911
+        },
+        {
+            "source": 0,
+            "target": 20,
+            "value": 133946.232
+        },
+        {
+            "source": 0,
+            "target": 21,
+            "value": 111696.715
+        },
+        {
+            "source": 0,
+            "target": 22,
+            "value": 110996.805
+        },
+        {
+            "source": 0,
+            "target": 23,
+            "value": 87221.981
+        },
+        {
+            "source": 0,
+            "target": 24,
+            "value": 85402.587
+        },
+        {
+            "source": 0,
+            "target": 25,
+            "value": 79941.737
+        },
+        {
+            "source": 0,
+            "target": 26,
+            "value": 79865.498
+        },
+        {
+            "source": 0,
+            "target": 27,
+            "value": 79838.39
+        },
+        {
+            "source": 0,
+            "target": 28,
+            "value": 66420.106
+        },
+        {
+            "source": 0,
+            "target": 29,
+            "value": 55410.342
+        },
+        {
+            "source": 0,
+            "target": 30,
+            "value": 35223.368
+        },
+        {
+            "source": 0,
+            "target": 31,
+            "value": 32770.075
+        },
+        {
+            "source": 0,
+            "target": 32,
+            "value": 31530.433
+        },
+        {
+            "source": 0,
+            "target": 33,
+            "value": 31156.358
+        },
+        {
+            "source": 0,
+            "target": 34,
+            "value": 30778.404
+        },
+        {
+            "source": 0,
+            "target": 35,
+            "value": 28943.441
+        },
+        {
+            "source": 0,
+            "target": 36,
+            "value": 24411.705
+        },
+        {
+            "source": 0,
+            "target": 37,
+            "value": 22724.109
+        },
+        {
+            "source": 0,
+            "target": 38,
+            "value": 17453.283
+        },
+        {
+            "source": 0,
+            "target": 39,
+            "value": 11901.234
+        },
+        {
+            "source": 0,
+            "target": 40,
+            "value": 11697.087
+        },
+        {
+            "source": 0,
+            "target": 41,
+            "value": 8269.36
+        },
+        {
+            "source": 0,
+            "target": 42,
+            "value": 7223.617
+        },
+        {
+            "source": 0,
+            "target": 43,
+            "value": 6683.085
+        },
+        {
+            "source": 0,
+            "target": 44,
+            "value": 5293.573
+        },
+        {
+            "source": 0,
+            "target": 45,
+            "value": 5055.062
+        },
+        {
+            "source": 0,
+            "target": 46,
+            "value": 2595.91
+        },
+        {
+            "source": 0,
+            "target": 47,
+            "value": 1787.018
+        },
+        {
+            "source": 0,
+            "target": 48,
+            "value": 1419.0339999999999
+        },
+        {
+            "source": 0,
+            "target": 49,
+            "value": 354.511
+        },
+        {
+            "source": 0,
+            "target": 50,
+            "value": 0.038
+        },
+        {
+            "source": 2,
+            "target": 1,
+            "value": 501.094
+        },
+        {
+            "source": 3,
+            "target": 1,
+            "value": 635.15
+        },
+        {
+            "source": 4,
+            "target": 1,
+            "value": 1283.094
+        },
+        {
+            "source": 5,
+            "target": 1,
+            "value": 4515.827
+        },
+        {
+            "source": 6,
+            "target": 1,
+            "value": 1045.271
+        },
+        {
+            "source": 7,
+            "target": 1,
+            "value": 304.552
+        },
+        {
+            "source": 8,
+            "target": 1,
+            "value": 659.397
+        },
+        {
+            "source": 9,
+            "target": 1,
+            "value": 1694.983
+        },
+        {
+            "source": 10,
+            "target": 1,
+            "value": 593.715
+        },
+        {
+            "source": 11,
+            "target": 1,
+            "value": 628.5600000000001
+        },
+        {
+            "source": 12,
+            "target": 1,
+            "value": 498.378
+        },
+        {
+            "source": 13,
+            "target": 1,
+            "value": 1959.788
+        },
+        {
+            "source": 14,
+            "target": 1,
+            "value": 1189.259
+        },
+        {
+            "source": 15,
+            "target": 1,
+            "value": 254.135
+        },
+        {
+            "source": 16,
+            "target": 1,
+            "value": 3135.474
+        },
+        {
+            "source": 17,
+            "target": 1,
+            "value": 602.066
+        },
+        {
+            "source": 18,
+            "target": 1,
+            "value": 1251.291
+        },
+        {
+            "source": 19,
+            "target": 1,
+            "value": 1088.103
+        },
+        {
+            "source": 20,
+            "target": 1,
+            "value": 1087.175
+        },
+        {
+            "source": 21,
+            "target": 1,
+            "value": 439.846
+        },
+        {
+            "source": 22,
+            "target": 1,
+            "value": 248.808
+        },
+        {
+            "source": 23,
+            "target": 1,
+            "value": 930.9490000000001
+        },
+        {
+            "source": 24,
+            "target": 1,
+            "value": 1634.352
+        },
+        {
+            "source": 25,
+            "target": 1,
+            "value": 26.838
+        },
+        {
+            "source": 26,
+            "target": 1,
+            "value": 969.547
+        },
+        {
+            "source": 27,
+            "target": 1,
+            "value": 997.2470000000001
+        },
+        {
+            "source": 28,
+            "target": 1,
+            "value": 484.565
+        },
+        {
+            "source": 29,
+            "target": 1,
+            "value": 570.227
+        },
+        {
+            "source": 30,
+            "target": 1,
+            "value": 567.343
+        },
+        {
+            "source": 31,
+            "target": 1,
+            "value": 393.48
+        },
+        {
+            "source": 32,
+            "target": 1,
+            "value": 369.289
+        },
+        {
+            "source": 33,
+            "target": 1,
+            "value": 517.919
+        },
+        {
+            "source": 34,
+            "target": 1,
+            "value": 770.531
+        },
+        {
+            "source": 35,
+            "target": 1,
+            "value": 100.81400000000001
+        },
+        {
+            "source": 36,
+            "target": 1,
+            "value": 583.365
+        },
+        {
+            "source": 37,
+            "target": 1,
+            "value": 261.914
+        },
+        {
+            "source": 38,
+            "target": 1,
+            "value": 102.911
+        },
+        {
+            "source": 39,
+            "target": 1,
+            "value": 172.022
+        },
+        {
+            "source": 40,
+            "target": 1,
+            "value": 359.701
+        },
+        {
+            "source": 41,
+            "target": 1,
+            "value": 182.271
+        },
+        {
+            "source": 42,
+            "target": 1,
+            "value": 47.35
+        },
+        {
+            "source": 43,
+            "target": 1,
+            "value": 129.889
+        },
+        {
+            "source": 44,
+            "target": 1,
+            "value": 261.798
+        },
+        {
+            "source": 45,
+            "target": 1,
+            "value": 190.952
+        },
+        {
+            "source": 46,
+            "target": 1,
+            "value": 143.03900000000002
+        },
+        {
+            "source": 47,
+            "target": 1,
+            "value": 12.528
+        },
+        {
+            "source": 48,
+            "target": 1,
+            "value": 3.1069999999999998
+        },
+        {
+            "source": 49,
+            "target": 1,
+            "value": 64.082
+        },
+        {
+            "source": 50,
+            "target": 1,
+            "value": 0.23
+        }
+    ]
+}

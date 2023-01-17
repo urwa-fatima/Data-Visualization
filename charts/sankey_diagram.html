@@ -63,6 +63,11 @@
                     <p>Flow of cases and deaths by country: Show how cases and deaths are flowing by country, this will
                         help to identify the countries that are most affected by the pandemic. This can also be used to
                         identify the countries that have managed to control the spread of the virus better.</p>
+
+                    <p>A way to make a fair comparison of death rates between countries is to calculate the death rate
+                        per 1000,000 people by calculating the number of deaths divided by the population and
+                        multiplying
+                        by 1000,000.</p>
                 </div>
             </div>
             <div class="row align-items-center">
@@ -77,12 +82,13 @@
     <script>
 
         var units = "";
+        const divID = d3.select('#chart');
 
         var margin = { top: 10, right: 10, bottom: 10, left: 10 },
-            width = 1000 - margin.left - margin.right,
+            width = divID.node().getBoundingClientRect().width - margin.left - margin.right,
             height = 740 - margin.top - margin.bottom;
 
-        var formatNumber = d3.format(",.0f"),    // zero decimal places
+        var formatNumber = d3.format(",.2f"),    // zero decimal places
             format = function (d) { return formatNumber(d) + " " + units; },
             // color = d3.scaleOrdinal(d3.schemeCategory10);
             color = d3.scale.category20();
@@ -104,7 +110,7 @@
         var path = sankey.link();
 
         // load the data
-        d3.json("../data/sankey_carbon_storage_top10.json", function (error, graph) {
+        d3.json("../data/sankey_data.json", function (error, graph) {
             // d3.json("../data/sankeygreenhouse.json", function (error, graph) {
 
             var nodeMap = {};
@@ -124,7 +130,7 @@
             sankey
                 .nodes(graph.nodes)
                 .links(graph.links)
-                .layout(32);
+                .layout(36);
 
             // add in the links
             var link = svg.append("g").selectAll(".link")
@@ -132,7 +138,7 @@
                 .enter().append("path")
                 .attr("class", "link")
                 .attr("d", path)
-                .style("stroke-width", function (d) { return Math.max(1, d.dy); })
+                .style("stroke-width", function (d) { return Math.max(3, d.dy + 3); })
                 .sort(function (a, b) { return b.dy - a.dy; });
 
             // add the link titles
@@ -159,7 +165,7 @@
 
             // add the rectangles for the nodes
             node.append("rect")
-                .attr("height", function (d) { return d.dy; })
+                .attr("height", function (d) { return Math.max(3, d.dy + 3); })
                 .attr("width", sankey.nodeWidth())
                 .style("fill", function (d) {
                     return d.color = color(d.name.replace(/ .*/, ""));
