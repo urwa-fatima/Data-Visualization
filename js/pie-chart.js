@@ -41,7 +41,7 @@ function pie_chart(selection, props) {
 
 
     //CSV Data
-    d3.csv("https://urwa-fatima.github.io/DV/data/world_total_death_pie_data.csv").then(function (data) {
+    d3.csv("./data/world_total_death_pie_data.csv").then(function (data) {
 
         console.log(data);
 
