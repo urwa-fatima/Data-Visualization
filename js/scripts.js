@@ -1,9 +1,9 @@
 $(function () {
-    $("#top-header").load("../elements/navbar.html");
+    $("#top-header").load("./elements/navbar.html");
 });
 
 $(function () {
-    $("#down-footer").load("../elements/footer.html");
+    $("#down-footer").load("./elements/footer.html");
 });
 // pie_chart()
 // // window.addEventListener('resize', pie_chart);
